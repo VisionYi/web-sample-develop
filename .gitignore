@@ -1,0 +1,13 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# library dependencies
+assets/lib/*
+
+# sumbile_text3 的專案設定檔
+web-develop.sublime-project
+web-develop.sublime-workspace
+
+# specification documents
+doc/*

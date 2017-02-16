@@ -1,0 +1,212 @@
+/**
+ * 導航欄 navber menu
+ *
+ * @author Shane Yi <scps950613@gmail.com>
+ * @date 2017-01-19
+ */
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+.navbar.fixed {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .icon {
+	height: 13px;
+	margin-right: 10px;
+	width: 13px;
+}
+
+.navbar .logo {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.navbar .logo img {
+    max-height: 55px;
+}
+
+.navbar .navigation {
+    height: auto;
+	width: auto;
+}
+
+/* navbar > menu */
+.main-menu li {
+    position: relative;
+}
+
+.main-menu li a {
+    text-decoration: none;
+}
+
+.main-menu > li {
+    display: inline-block;
+}
+
+.main-menu > li > a {
+    display: block;
+    color: #777;
+    line-height: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 30px 15px;
+}
+
+.main-menu > li:hover > a,
+.main-menu > li > a.active {
+    color: #23dbdb;
+}
+
+
+/* navbar > menu > dropdown (下拉選單) */
+.main-menu li:hover > ul.sub-menu {
+    /* show the sub-menu */
+    display: block;
+}
+
+/* level 2 */
+ul.sub-menu {
+    border: 1px solid #e5e5e5;
+    border-radius: 0 0 2px 2px;
+    display: none;
+    left: 0;
+    position: absolute;
+    width: 150px;
+    z-index: 110;
+}
+
+ul.sub-menu li a {
+    background-color: #fff;
+    border-left: 5px solid transparent;
+    border-top: 1px solid #e5e5e5;
+    color: #777;
+    display: block;
+    font-size: 13px;
+	font-weight: 600;
+    padding: 13px 10px;
+}
+
+ul.sub-menu li:first-child a {
+    border-top: none;
+}
+
+/* level 3+ */
+ul.sub-menu ul.sub-menu {
+    left: 149px;
+    top: 0;
+    z-index: 120;
+}
+
+ul.sub-menu li a:hover {
+    background-color: #777;
+    border-left: 5px solid #23dbdb;
+    color: #fff;
+}
+
+ul.sub-menu > li.dropdown > a {
+    background-image: url(../images/arrow.png);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 5px 9px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+/* 以下都是RWD版的 meun */
+
+@media (max-width: 767px) {
+
+    #menu-toggle {
+        display: block;
+        float: right;
+        font-size: 20px;
+        color: #777;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        padding: 5px 10px;
+        margin: 10px 20px;
+    }
+
+    #menu-toggle:hover {
+        background-color: #e5e5e5;
+    }
+
+	.navigation {
+		border-top: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		max-height: 340px;
+		overflow-y: auto;
+        display: none;
+    }
+
+    .main-menu {
+        margin: 10px 0;
+    }
+
+    .navbar .logo {
+        margin: 5px 0;
+    }
+
+    .navbar .logo img {
+        max-height: 45px;
+    }
+
+/*
+    .main-menu li {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .main-menu > li {
+        margin-top: -1px;
+    }
+    .main-menu > li:first-child {
+        margin-top: 0;
+    }
+    .main-menu > li > a {
+        background-color: #333;
+        border: 1px solid #444;
+        color: #bbb;
+        display: block;
+        font-size: 14px;
+        padding: 12px !important;
+        padding: 0;
+    }
+    .main-menu li > a:hover {
+        background-color: #444;
+    }
+    .main-menu > li.dropdown {
+        padding: 0;
+    }
+    .main-menu > li:hover > a,
+    .main-menu > li > a.active {
+        border: 1px solid #444 !important;
+        color: #fff !important;
+    }
+    ul.sub-menu {
+        display: block;
+        margin-top: -1px;
+        margin-left: 20px;
+        position: static;
+        padding: 0;
+        width: inherit;
+    }
+    ul.sub-menu > li:first-child {
+        border-top: 1px solid #444 !important;
+    }
+    ul.sub-menu > li > a.dropdown {
+        background: #333 !important;
+    } */
+}

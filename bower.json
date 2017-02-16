@@ -1,0 +1,13 @@
+{
+  "name": "web-sample-develop",
+  "authors": [
+    "visionyi <scps950613@gmail.com>"
+  ],
+  "description": "網站樣板開發",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jQuery": "^3.1.1"
+  }
+}
