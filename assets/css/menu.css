@@ -1,5 +1,5 @@
 /**
- * 導航欄 navber menu
+ * 導航列 navber menu
  *
  * @author Shane Yi <scps950613@gmail.com>
  * @date 2017-01-19
@@ -26,6 +26,7 @@
 }
 
 .navbar .logo {
+    float: left;
     font-size: 23px;
     margin: 8px 0;
 }
@@ -35,6 +36,7 @@
 }
 
 .navbar .navigation {
+    float: right;
     height: auto;
 	width: auto;
 }

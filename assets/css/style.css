@@ -13,7 +13,8 @@ body {
 
 p {
     color: #777;
-    margin: 0 0 12px 0;
+    margin: 0 0 23px 0;
+    line-height: 23px;
 }
 
 a {
@@ -62,14 +63,6 @@ button,
     overflow: hidden;
 }
 
-.right {
-    float: right;
-}
-
-.left {
-    float: left;
-}
-
 /* 清除 float 浮動 */
 .clear-float:after {
     clear: both;
@@ -79,56 +72,6 @@ button,
     overflow: hidden;
 }
 
-/* 以下為共用section 元素 */
-.title-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    width: 100%;
-    margin: 0;
-}
-
-.title-center,
-.title-center > h1,
-.title-center > h2 {
-    font-size: 28px;
-    font-weight: 300;
-}
-
-.title-left {
-    margin: 0 0 16px 0;
-}
-
-.title-left,
-.title-left > h1,
-.title-left > h2 {
-    font-size: 23px;
-    text-align: left;
-}
-
-.title-center .subtitle,
-.title-left .subtitle {
-    font-size: 15px;
-}
-
-.title-left .subtitle {
-    display: inline-block;
-    margin-left: 5px;
-}
-
-ul.flex > li .item-title {
-    color: #000;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-ul.flex > li .item-intro {
-    color: #777;
-    font-size: 14px;
-    margin: 0;
-}
 
 /* 格線系統 */
 .grid {
@@ -138,6 +81,9 @@ ul.flex > li .item-intro {
     margin-left: -5px;
     margin-right: -5px;
     position: relative;
+
+    /* margin-top: -5px; */
+    /* margin-bottom: -5px; */
 }
 
 .grid > .wide {
@@ -145,6 +91,9 @@ ul.flex > li .item-intro {
     padding-left: 5px;
     padding-right: 5px;
     position: relative;
+
+    /* padding-top: 5px; */
+    /* padding-bottom: 5px; */
 }
 
 .grid.relaxed {
@@ -349,6 +298,186 @@ ul.flex > li .item-intro {
     width: 91.666%;
 }
 
+/* 格線系統位移 floated */
+.two.grid > .one-floated.wide {
+    margin-left: 50%
+}
+
+.three.grid > .one-floated.wide {
+    margin-left: 33.333%
+}
+.three.grid > .two-floated.wide {
+    margin-left: 66.666%
+}
+
+.four.grid > .one-floated.wide {
+    margin-left: 25%
+}
+.four.grid > .two-floated.wide {
+    margin-left: 50%
+}
+.four.grid > .three-floated.wide {
+    margin-left: 75%
+}
+
+.five.grid > .one-floated.wide {
+    margin-left: 20%
+}
+.five.grid > .two-floated.wide {
+    margin-left: 40%
+}
+.five.grid > .three-floated.wide {
+    margin-left: 60%
+}
+.five.grid > .four-floated.wide {
+    margin-left: 80%
+}
+
+.six.grid > .one-floated.wide {
+    margin-left: 16.666%;
+}
+.six.grid > .two-floated.wide {
+    margin-left: 33.333%;
+}
+.six.grid > .three-floated.wide {
+    margin-left: 50%;
+}
+.six.grid > .four-floated.wide {
+    margin-left: 66.666%;
+}
+.six.grid > .five-floated.wide {
+    margin-left: 83.333%;
+}
+
+.seven.grid > .one-floated.wide {
+    margin-left: 14.28%;
+}
+.seven.grid > .two-floated.wide {
+    margin-left: 28.57%;
+}
+.seven.grid > .three-floated.wide {
+    margin-left: 42.85%;
+}
+.seven.grid > .four-floated.wide {
+    margin-left: 57.14%;
+}
+.seven.grid > .five-floated.wide {
+    margin-left: 71.43%;
+}
+.seven.grid > .six-floated.wide {
+    margin-left: 85.71%;
+}
+
+.eight.grid > .one-floated.wide {
+    margin-left: 12.5%;
+}
+.eight.grid > .two-floated.wide {
+    margin-left: 25%;
+}
+.eight.grid > .three-floated.wide {
+    margin-left: 37.5%;
+}
+.eight.grid > .four-floated.wide {
+    margin-left: 50%;
+}
+.eight.grid > .five-floated.wide {
+    margin-left: 62.5%;
+}
+.eight.grid > .six-floated.wide {
+    margin-left: 75%;
+}
+.eight.grid > .seven-floated.wide {
+    margin-left: 87.5%;
+}
+
+.nine.grid > .one-floated.wide {
+    margin-left: 11.111%;
+}
+.nine.grid > .two-floated.wide {
+    margin-left: 22.222%;
+}
+.nine.grid > .three-floated.wide {
+    margin-left: 33.333%;
+}
+.nine.grid > .four-floated.wide {
+    margin-left: 44.444%;
+}
+.nine.grid > .five-floated.wide {
+    margin-left: 55.555%;
+}
+.nine.grid > .six-floated.wide {
+    margin-left: 66.666%;
+}
+.nine.grid > .seven-floated.wide {
+    margin-left: 77.777%;
+}
+.nine.grid > .eight-floated.wide {
+    margin-left: 88.888%;
+}
+
+.ten.grid > .one-floated.wide {
+    margin-left: 10%;
+}
+.ten.grid > .two-floated.wide {
+    margin-left: 20%;
+}
+.ten.grid > .three-floated.wide {
+    margin-left: 30%;
+}
+.ten.grid > .four-floated.wide {
+    margin-left: 40%;
+}
+.ten.grid > .five-floated.wide {
+    margin-left: 50%;
+}
+.ten.grid > .six-floated.wide {
+    margin-left: 60%;
+}
+.ten.grid > .seven-floated.wide {
+    margin-left: 70%;
+}
+.ten.grid > .eight-floated.wide {
+    margin-left: 80%;
+}
+.ten.grid > .nine-floated.wide {
+    margin-left: 90%;
+}
+
+.twelve.grid > .one-floated.wide {
+    margin-left: 8.333%;
+}
+.twelve.grid > .two-floated.wide {
+    margin-left: 16.666%;
+}
+.twelve.grid > .three-floated.wide {
+    margin-left: 25%;
+}
+.twelve.grid > .four-floated.wide {
+    margin-left: 33.333%;
+}
+.twelve.grid > .five-floated.wide {
+    margin-left: 41.666%;
+}
+.twelve.grid > .six-floated.wide {
+    margin-left: 50%;
+}
+.twelve.grid > .seven-floated.wide {
+    margin-left: 58.333%;
+}
+.twelve.grid > .eight-floated.wide {
+    margin-left: 66.666%;
+}
+.twelve.grid > .nine-floated.wide {
+    margin-left: 75%;
+}
+.twelve.grid > .ten-floated.wide {
+    margin-left: 83.333%;
+}
+.twelve.grid > .eleven-floated.wide {
+    margin-left: 91.666%;
+}
+
+/* 格線系統 手機版響應式 */
 @media (max-width: 767px) {
     .mobile-stack-one.grid > .wide {
         width: 100% !important;
@@ -379,6 +508,182 @@ ul.flex > li .item-intro {
     .mobile-stack-two.grid > .wide:last-child {
         margin-bottom: auto;
     }
+}
+
+
+
+/* 以下為共用的 UI元件 */
+.title-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 100%;
+    margin: 0;
+}
+
+.title-center,
+.title-center > h1,
+.title-center > h2 {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.title-left {
+    margin: 0 0 16px 0;
+}
+
+.title-left,
+.title-left > h1,
+.title-left > h2 {
+    font-size: 23px;
+    text-align: left;
+}
+
+.title-center .subtitle,
+.title-left .subtitle {
+    font-size: 15px;
+}
+
+.title-left .subtitle {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+ul.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+ul.flex-row > li .item-title,
+ul.flex-column > li .item-title {
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+ul.flex-row > li .item-intro,
+ul.flex-column > li .item-intro {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
+
+.page-title {
+    background: url('../images/page-title-bg.jpg') no-repeat;
+    margin-bottom: 50px;
+    padding: 28px 0;
+}
+.page-title .title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.specail-banner {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    border: 1px solid #e2e2e2;
+    padding: 30px 15px;
+}
+.specail-banner .banner-image {
+    margin-right: 10px;
+    max-width: 135px;
+    width: 100%;
+}
+.specail-banner .banner-image img {
+    width: 100%;
+}
+.specail-banner .content h3 {
+    color: #404040;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+.specail-banner .content p {
+    margin-bottom: 30px;
+}
+.specail-banner .content .button {
+    background-color: #9ac63d;
+    color: #fff;
+}
+
+
+ul.last-news {
+    background-color: #eee;
+    border-top: 5px solid #ddd;
+    padding: 30px;
+}
+ul.last-news > li {
+    display: none;
+    text-align: left;
+}
+ul.last-news > li.active {
+    display: block;
+}
+ul.last-news > li .news-title{
+    color: #404040;
+    font-size: 16px;
+    margin: 0;
+}
+ul.last-news > li .news-date{
+    color: #777;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+ul.last-news > li .news-content{
+    color: #777;
+    margin: 0;
+    margin-bottom: 25px;
+}
+.last-news .look-more {
+    color: #0076f9;
+}
+.last-news .look-more:hover {
+    color: #000;
+}
+
+ul.clients-say > li .content-text {
+    background-color: #f0f0f0;
+    font-style: italic;
+    margin-bottom: 12px;
+    padding: 30px 30px 60px 30px;
+}
+ul.clients-say > li .author {
+    display: flex;
+    flex-direction: row;
+    margin: -50px 0 0 12px;
+}
+ul.clients-say > li .author img {
+    border: 5px solid #fff;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+ul.clients-say > li .author .name {
+    float: left;
+    font-size: 16px;
+    margin: 50px 0 0 20px;
+}
+ul.clients-say > li .author .name .position {
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
 }
 
 
@@ -460,13 +765,6 @@ ul.flex > li .item-intro {
     text-align: center;
 }
 
-.category-service ul.service-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .category-service ul.service-items > li {
     margin: 30px 15px 20px 15px;
     text-align: center;
@@ -544,35 +842,6 @@ ul.flex > li .item-intro {
     margin-left: 24px;
 }
 
-.about-us .clients-say ul.clients > li .content-text {
-    background-color: #f0f0f0;
-    font-style: italic;
-    line-height: 22px;
-    padding: 30px 30px 60px 30px;
-}
-
-.about-us .clients-say ul.clients > li .author {
-    margin: -50px 0 0 12px;
-}
-
-.about-us .clients-say ul.clients > li .author img {
-    border: 5px solid #fff;
-    border-radius: 50%;
-    float: left;
-    height: 100px;
-    width: 100px;
-}
-
-.about-us .clients-say ul.clients > li .author .name {
-    float: left;
-    font-size: 16px;
-    margin: 50px 0 0 20px;
-}
-
-.about-us .clients-say ul.clients > li .author .name .position {
-    font-size: 14px;
-    font-style: italic;
-}
 
 @media (max-width: 767px) {
     .about-us .intro {
@@ -596,11 +865,7 @@ ul.flex > li .item-intro {
 }
 
 .feature ul.feature-items {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     height: 380px;
-    width: 100%;
 }
 
 .feature ul.feature-items > li {
@@ -646,14 +911,15 @@ ul.flex > li .item-intro {
 }
 
 .feature.less-than-three ul.feature-items {
+    flex-wrap: nowrap;
     height: auto;
     margin-left: 5%;
 }
 
 .feature.less-than-three ul.feature-items > li {
     align-items: flex-start;
+    height: 100%;
     width: auto;
-    height: auto;
     margin-right: 10%;
     margin-bottom: 50px;
 }
@@ -666,22 +932,17 @@ ul.flex > li .item-intro {
     margin: 0 0 10px 0;
 }
 
-.feature.less-than-three ul.feature-items > li .item-intro {
-    font-size: 14px;
-    margin: 0;
-}
-
 @media (max-width: 767px) {
     .feature.less-than-three ul.feature-items,
     .feature ul.feature-items {
-        height: auto;
+        height: 100%;
         margin-left: 0;
     }
 
     .feature.less-than-three ul.feature-items > li,
     .feature ul.feature-items > li {
         margin-right: 0;
-        width: auto;
+        width: 100%;
     }
 }
 
@@ -817,76 +1078,6 @@ ul.pricing-table.bright > li {
     content: "\f068";
 }
 
-.board-news ul.last-news {
-    background-color: #eee;
-    border-top: 5px solid #ddd;
-    padding: 30px;
-}
-
-.board-news ul.last-news > li {
-    display: none;
-    text-align: left;
-}
-
-.board-news ul.last-news > li.active {
-    display: block;
-}
-
-.board-news ul.last-news > li .news-title{
-    color: #404040;
-    font-size: 16px;
-    margin: 0;
-}
-.board-news ul.last-news > li .news-date{
-    color: #777;
-    font-size: 12px;
-    margin: 0;
-    margin-bottom: 15px;
-}
-.board-news ul.last-news > li .news-content{
-    color: #777;
-    margin: 0;
-    margin-bottom: 25px;
-}
-
-.board-news .look-more {
-    color: #0076f9;
-}
-.board-news .look-more:hover {
-    color: #777;
-}
-
-.board-news .specail-banner {
-    background-color: #f0f0f0;
-    border: 1px solid #e2e2e2;
-    padding: 30px 15px;
-}
-
-.board-news .specail-banner img {
-    float: left;
-    margin-right: 10px;
-    width: 140px;
-}
-
-.board-news .specail-banner .content {
-    text-align: left;
-}
-
-.board-news .specail-banner .content h3 {
-    color: #404040;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 35px;
-    margin-bottom: 20px;
-}
-.board-news .specail-banner .content p {
-    margin-bottom: 30px;
-}
-.board-news .specail-banner .content .button {
-    background-color: #9ac63d;
-    color: #fff;
-}
-
 /**
  * 頁面底部 - footer
  *
@@ -917,7 +1108,7 @@ ul.pricing-table.bright > li {
 
 .main-footer ul.contact-info > li {
     color: #777;
-    line-height: 24px;
+    line-height: 23px;
     margin-bottom: 6px;
 }
 .main-footer ul.contact-info > li .icon{
@@ -925,7 +1116,6 @@ ul.pricing-table.bright > li {
 }
 
 .main-footer .company-intro {
-    line-height: 24px;
     margin-right: 10%;
 }
 
@@ -1083,3 +1273,96 @@ ul.pricing-table.bright > li {
     color: #0076f9
 }
 
+
+
+/**
+ * 廣告消息文章 ad-page
+ *
+ * @date 2017-02-16 14:28:14
+ */
+
+.ad-page .ad-post {
+    margin: 0 5% 50px 0;
+}
+
+.ad-page .ad-post .image-frame {
+    border: 6px solid #fff;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ad-page .ad-post .image-frame img {
+    width: 100%;
+}
+
+.ad-page .ad-post .post-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.ad-page .ad-post .post-header .calendar {
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    margin-right: 25px;
+    text-align: center;
+    width: 60px;
+}
+
+.ad-page .ad-post .post-header .calendar .date {
+    color: #0896b8;
+    font-size: 25px;
+    line-height: 25px;
+    padding: 10px 0;
+}
+
+.ad-page .ad-post .post-header .calendar .month {
+    background-color: #0896b8;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 0;
+}
+.ad-page .ad-post .post-header .post-title {
+    color: #0896b8;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.ad-page .ad-post .post-content .clear-float img {
+    float: left;
+    margin: 0 30px 15px 0;
+    max-width: 355px;
+}
+
+.ad-page .ad-post .post-content  ul.image-items {
+    justify-content: space-between;
+}
+
+.ad-page .ad-post .post-content  ul.image-items > li,
+.ad-page .ad-post .post-content  ul.image-items > li img {
+    width: 355px;
+}
+
+.ad-page .ad-post .post-content  ul.image-items > li .item-title {
+    font-size: 23px;
+    margin: 10px 0 16px 0;
+}
+
+.ad-page .specail-banner,
+.ad-page .last-news,
+.ad-page .clients-say,
+.ad-page .site-ad {
+    margin-bottom: 40px;
+}
+
+.ad-page .specail-banner .banner-image {
+    max-width: 115px;
+}
+
+.ad-page .site-ad img {
+    width: 100%;
+}
