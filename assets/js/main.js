@@ -60,8 +60,8 @@ $(document).ready(function() {
 	controlItems.on('click', adSliderClick);
 
 
-	/* board-news */
-	var questionItems = $('.board-news ul.question-answer > li');
+	/* All question-answer */
+	var questionItems = $('ul.question-answer > li');
 
 	var questionClick = function() {
 		var itemClicked = $(this).parent('li');

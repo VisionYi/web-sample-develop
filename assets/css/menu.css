@@ -55,12 +55,12 @@
 }
 
 .main-menu > li > a {
-    display: block;
     color: #777;
-    line-height: 15px;
+    display: block;
     font-size: 15px;
     font-weight: 600;
-    margin: 30px 15px;
+    line-height: 15px;
+    padding: 30px 15px;
 }
 
 .main-menu > li:hover > a,
