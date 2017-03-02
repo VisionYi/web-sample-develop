@@ -34,10 +34,11 @@ ul {
     padding: 0;
 }
 
-button,
 .button {
+    background-color: #9ac63d;
     border: none;
     border-radius: 4px;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
     font-family: Open Sans, Microsoft JhengHei, sans-serif;
@@ -46,6 +47,17 @@ button,
     margin: 0;
     padding: 12px 18px;
     white-space: nowrap;
+}
+
+.small.button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+}
+
+.full-with.button {
+    text-align: center;
+    width: 100%
 }
 
 .container {
@@ -98,13 +110,13 @@ button,
 }
 
 .grid.more-relaxed {
-    margin-left: -23px;
-    margin-right: -23px;
+    margin-left: -21px;
+    margin-right: -21px;
 }
 
 .grid.more-relaxed > .wide {
-    padding-left: 23px;
-    padding-right: 23px;
+    padding-left: 21px;
+    padding-right: 21px;
 }
 
 .grid.bottom-space > .wide {
@@ -780,21 +792,16 @@ ul > li .item-intro {
     width: 100%;
 }
 
-.specail-banner .content h3 {
+.specail-banner .title {
     color: #404040;
     font-size: 30px;
     font-weight: 600;
-    line-height: 35px;
-    margin-bottom: 20px;
+    line-height: 30px;
+    margin: 30px 0 20px 0;
 }
 
-.specail-banner .content p {
+.specail-banner p {
     margin-bottom: 30px;
-}
-
-.specail-banner .content .button {
-    background-color: #9ac63d;
-    color: #fff;
 }
 
 ul.last-news {
@@ -886,7 +893,29 @@ ul.clients-say > li .author .name .position {
 }
 
 .page-post {
-    margin-right: 5%;
+    margin-right: 5.5%;
+}
+
+.page-sidebar .specail-banner,
+.page-sidebar .last-news,
+.page-sidebar .clients-say,
+.page-sidebar .site-ad {
+    margin-bottom: 40px;
+}
+
+.page-sidebar .specail-banner .title {
+    color: #404040;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 20px 0 20px 0;
+}
+
+.page-sidebar .specail-banner .banner-image {
+    max-width: 110px;
+}
+
+.page-sidebar .site-ad img {
+    width: 100%;
 }
 
 .image-frame {
@@ -901,40 +930,33 @@ ul.clients-say > li .author .name .position {
     width: 100%;
 }
 
-.post-header {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-}
-
-.post-header .calendar {
+.calendar {
     background-color: #f9f9f9;
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-    margin-right: 25px;
     text-align: center;
     width: 60px;
 }
 
-.post-header .calendar .date {
+.calendar .date {
     color: #0896b8;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 26px;
+    line-height: 26px;
     padding: 10px 0;
 }
 
-.post-header .calendar .month {
+.calendar .month {
     background-color: #0896b8;
     color: #fff;
     font-size: 12px;
     padding: 3px 0;
 }
 
-.post-header .post-title {
+.post-title {
     color: #0896b8;
     font-size: 30px;
     font-weight: 400;
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
 .post-content {
@@ -948,6 +970,10 @@ ul.clients-say > li .author .name .position {
 .post-content .text-around-picture img {
     float: left;
     margin: 0 30px 15px 0;
+}
+
+.post-content .post-image-items a:hover {
+    opacity: 0.8;
 }
 
 .post-content .post-image-items img {
@@ -994,7 +1020,8 @@ ul.question-answer > li .question {
     cursor: pointer;
     font-size: 14px;
     margin: 0;
-    padding: 13px 20px;
+    padding: 13px 20px 13px 50px;
+    position: relative;
 }
 
 ul.question-answer > li .question:hover {
@@ -1003,20 +1030,22 @@ ul.question-answer > li .question:hover {
 }
 
 ul.question-answer > li .question:before {
+    position: absolute;
+    top: 14px;
+    left: 20px;
     content: "\f067";
     background-color: #c2c2c2;
     color: #fff;
-    margin-right: 11px;
-    padding: 2px 4px;
+    height: 14px;
+    padding: 3px 4px 2px 4px;
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
+    font-size: 14px;
     text-rendering: auto;
 }
 
 ul.question-answer > li .answer {
     color: #777;
     display: none;
-    line-height: 25px;
     margin: 0;
     padding: 0 20px 15px 50px;
 }
@@ -1063,7 +1092,7 @@ ul.question-answer > li.active .question:before {
 .slider-ad ul.inner > li {
     background-color: #f9f9f9;
     display: none;
-    max-height: 465px;
+    max-height: 540px;
     overflow: hidden;
 }
 
@@ -1358,7 +1387,6 @@ ul.question-answer > li.active .question:before {
 
 .purchase-price ul.pricing-table > li .button {
     background-color: #c2c2c2;
-    color: #fff;
 }
 
 .purchase-price ul.pricing-table > li .button:hover {
@@ -1420,10 +1448,14 @@ ul.pricing-table.bright > li {
     color: #777;
     line-height: 23px;
     margin-bottom: 6px;
+    padding-left: 20px;
+    position: relative;
 }
 
 .main-footer ul.contact-info > li .icon {
-    margin-right: 8px;
+    left: 0;
+    position: absolute;
+    top: 4.5px;
 }
 
 .main-footer .company-intro {
@@ -1442,6 +1474,8 @@ ul.pricing-table.bright > li {
 .main-footer .fast-links a {
     color: #777;
     margin-bottom: 10px;
+    padding-left: 16px;
+    position: relative;
 }
 
 .main-footer .fast-links a:hover {
@@ -1449,8 +1483,10 @@ ul.pricing-table.bright > li {
 }
 
 .main-footer .fast-links a:before {
+    position: absolute;
+    left: 0;
+    top: 3.5px;
     content: "\f105";
-    margin-right: 8px;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
@@ -1474,13 +1510,6 @@ ul.pricing-table.bright > li {
     padding: 10px;
     text-transform: capitalize;
     width: 100%;
-}
-
-.main-footer .contact-form .button {
-    background-color: #9ac63d;
-    color: #fff;
-    font-size: 15px;
-    padding: 8px 14px;
 }
 
 .copyright {
@@ -1539,80 +1568,56 @@ ul.pricing-table.bright > li {
     background-color: #e2e2e2;
 }
 
-.banner {
+.banner-bg .banner {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     height: 185px;
     overflow: hidden;
 }
 
-.banner .banner-title {
+.banner-bg .banner .banner-title {
     color: #0076f9;
     font-size: 23px;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
 
-.banner .banner-title i {
+.banner-bg .banner .banner-title i {
     color: #000;
     font-style: normal;
 }
 
-.banner .button {
+.banner-bg .banner .button {
     background-color: #0076f9;
-    color: #fff;
+    margin-left: 20px;
 }
 
-.banner img {
+.banner-bg .banner img {
     width: 100%;
 }
 
-.banner.center {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.banner-bg.no-image .banner {
+    height: 115px;
 }
 
-.banner.center .banner-title {
-    margin: 0 20px 0 0;
-}
-
-.banner.center .button {
+.banner-bg.no-image .banner .button {
     font-size: 20px;
+    border-radius: 8px;
     background-color: transparent;
     border: 2px solid #0076f9;
-    color: #0076f9
+    color: #0076f9;
 }
 
 
 /**
- * 廣告消息文章 ad-page
+ * 企業廣告內頁 ad-page
  *
  * @date 2017-02-16 14:28:14
  */
 
 .ad-page {
     margin-bottom: 50px;
-}
-
-.ad-page .post-header {
-    margin-bottom: 10px;
-}
-
-.ad-page .specail-banner,
-.ad-page .last-news,
-.ad-page .clients-say,
-.ad-page .site-ad {
-    margin-bottom: 40px;
-}
-
-.ad-page .specail-banner .banner-image {
-    max-width: 115px;
-}
-
-.ad-page .site-ad img {
-    width: 100%;
 }
 
 
@@ -1831,10 +1836,9 @@ ul.pricing-table.bright > li {
 }
 
 .contact-page .page-form .button {
-    background-color: #9ac63d;
-    color: #fff;
-    font-size: 15px;
-    padding: 8px 14px;
+    width: 33.333%;
+    margin-left: 33.333%;
+    margin-right: 33.333%;
 }
 
 /**
@@ -1842,15 +1846,15 @@ ul.pricing-table.bright > li {
  *
  * @date 2017-02-22 10:52:59
  */
-.bg-1 {
+
+.full-bg-wrapper.bg-1 {
     background-image: url('../images/phone-large-bg-1.jpg');
 }
-.bg-2 {
+.full-bg-wrapper.bg-2 {
     background-image: url('../images/phone-large-bg-2.jpg');
 }
 
 .full-bg-wrapper {
-    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -1875,7 +1879,7 @@ ul.pricing-table.bright > li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 465px;
+    height: 540px;
     width: 100%;
     margin: 0;
     z-index: 3;
@@ -1904,17 +1908,22 @@ ul.pricing-table.bright > li {
     z-index: 3;
 }
 
-.full-bg-wrapper .intro {
+.full-bg-wrapper .intro,
+.full-bg-wrapper .only-intro {
     color: #fff;
-    font-size: 23px;
+    font-size: 18px;
     line-height: normal;
     margin: 0;
     z-index: 3;
 }
 
+.full-bg-wrapper .only-intro{
+    font-size: 23px;
+}
+
 
 /**
- * scroll-gallery
+ * 滑動畫廊 scroll-gallery
  *
  * @date 2017-02-23 15:05:58
  */
@@ -1967,4 +1976,76 @@ ul.pricing-table.bright > li {
     font-size: 16px;
     line-height: 25px;
     margin: 0;
+}
+
+
+/**
+ * 常見問題內頁 question-answer-page
+ *
+ * @date 2017-02-24 10:26:06
+ */
+
+.question-answer-page {
+    margin-bottom: 50px;
+}
+
+.question-answer-page ul.list-arrow-circle {
+    margin-bottom: 20px;
+}
+
+.question-answer-page ul.list-arrow-circle > li {
+    color: #777;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.question-answer-page ul.list-arrow-circle > li:before {
+    content: "\f105";
+    background-color: #777;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    height: 12px;
+    top: 4.5px;
+    left: 0;
+    padding: 0 3.2px 0 4.8px;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 12px;
+    text-rendering: auto;
+}
+
+
+/**
+ * 最新消息內頁 news-page
+ *
+ * @date 2017-02-24 13:41:41
+ */
+
+.news-page {
+    margin-bottom: 50px;
+}
+
+
+/**
+ * 活動快訊 activity
+ *
+ * @date 2017-02-24 13:53:06
+ */
+
+.activity {
+    margin-bottom: 50px;
+}
+
+
+/**
+ * 活動快訊內頁 activity-info-page
+ *
+ * @date 2017-02-24 14:21:42
+ */
+
+.activity-info-page {
+    margin-bottom: 50px;
 }
