@@ -679,7 +679,7 @@ ul {
 @media (max-width: 767px) {
     .mobile-stack-one.grid > .wide {
         width: 100% !important;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
     .mobile-stack-one.grid > .wide:last-child {
         margin-bottom: auto;
@@ -689,7 +689,7 @@ ul {
 @media (max-width: 767px) and (min-width: 480px) {
     .mobile-stack-two.grid > .wide {
         width: 50% !important;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
     .mobile-stack-two.grid > .wide:nth-last-child(1),
     .mobile-stack-two.grid > .wide:nth-last-child(2) {
@@ -700,7 +700,7 @@ ul {
 @media (max-width: 479px) {
     .mobile-stack-two.grid > .wide {
         width: 100% !important;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
     .mobile-stack-two.grid > .wide:last-child {
         margin-bottom: auto;
@@ -718,34 +718,25 @@ ul {
     height: 120px;
     width: 100%;
     margin: 0;
-}
-
-.title-center,
-.title-center > h1,
-.title-center > h2 {
     font-size: 28px;
     font-weight: 300;
 }
 
 .title-left {
     margin: 0 0 16px 0;
-}
-
-.title-left,
-.title-left > h1,
-.title-left > h2 {
     font-size: 23px;
     text-align: left;
 }
 
-.title-center .subtitle,
-.title-left .subtitle {
+.title-center .subtitle {
     font-size: 15px;
+    margin: 20px 0 0 0;
 }
 
 .title-left .subtitle {
     display: inline-block;
-    margin-left: 5px;
+    font-size: 15px;
+    margin: 0 0 0 5px;
 }
 
 ul.flex-row {
@@ -1097,7 +1088,7 @@ ul.question-answer > li.active .question:before {
 }
 
 .slider-ad ul.inner > li img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .slider-ad ul.inner > li.active {
@@ -1269,7 +1260,6 @@ ul.question-answer > li.active .question:before {
 
 .feature ul.feature-items > li .item-icon {
     color: #000;
-    display: table;
     font-size: 35px;
     height: 50px;
     margin-right: 30px;
@@ -1287,7 +1277,8 @@ ul.question-answer > li.active .question:before {
 }
 
 .feature .main-img {
-    width: 100%;
+    max-height: 380px;
+    max-width: 100%;
 }
 
 .feature.less-than-three {
@@ -1301,7 +1292,7 @@ ul.question-answer > li.active .question:before {
 
 .feature.less-than-three ul.feature-items {
     flex-wrap: nowrap;
-    height: auto;
+    height: 100%;
     margin-left: 5%;
 }
 
@@ -1744,7 +1735,7 @@ ul.pricing-table.bright > li {
 }
 
 .about-page .youtube-video .video-intro {
-    padding: 10px 10px 4px 10px;
+    padding: 10px 10px 5px 10px;
 }
 
 .responsive-16by9,
@@ -1841,6 +1832,7 @@ ul.pricing-table.bright > li {
     margin-right: 33.333%;
 }
 
+
 /**
  * 滿版背景內容 full-bg-wrapper
  *
@@ -1850,6 +1842,7 @@ ul.pricing-table.bright > li {
 .full-bg-wrapper.bg-1 {
     background-image: url('../images/phone-large-bg-1.jpg');
 }
+
 .full-bg-wrapper.bg-2 {
     background-image: url('../images/phone-large-bg-2.jpg');
 }
@@ -1892,6 +1885,7 @@ ul.pricing-table.bright > li {
     max-width: 800px;
     text-align: center;
 }
+
 .full-bg-wrapper .text-left {
     align-items: flex-start;
     margin-left: 100px;
@@ -1917,7 +1911,7 @@ ul.pricing-table.bright > li {
     z-index: 3;
 }
 
-.full-bg-wrapper .only-intro{
+.full-bg-wrapper .only-intro {
     font-size: 23px;
 }
 
@@ -1943,6 +1937,7 @@ ul.pricing-table.bright > li {
 .scroll-gallery ul.scroll-container > li {
     margin-bottom: 100px;
 }
+
 .scroll-gallery ul.scroll-container > li:last-child {
     margin-bottom: 0;
 }
@@ -1971,6 +1966,7 @@ ul.pricing-table.bright > li {
     font-size: 32px;
     margin: 0 0 20px 0;
 }
+
 .scroll-gallery ul.scroll-container > li .intro {
     color: #000;
     font-size: 16px;
@@ -2004,14 +2000,15 @@ ul.pricing-table.bright > li {
 
 .question-answer-page ul.list-arrow-circle > li:before {
     content: "\f105";
+    color: #fff;
     background-color: #777;
     border-radius: 50%;
-    color: #fff;
     position: absolute;
     height: 12px;
     top: 4.5px;
     left: 0;
-    padding: 0 3.2px 0 4.8px;
+    padding-right:3.2px;
+    padding-left: 4.8px;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 12px;
     text-rendering: auto;

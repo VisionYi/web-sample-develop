@@ -6,18 +6,21 @@
  */
 $(document).ready(function() {
 
-	/* MAIN MENU */
-	$('.navigation > .main-menu > li:has(ul.sub-menu)').addClass('dropdown');
-	$('ul.sub-menu > li:has(ul.sub-menu) > a').addClass('dropdown');
+	/* RWD 導航列 */
+	$('.navbar .menu-toggle').click(function() {
+		$('.navbar .navigation').slideToggle(300);
+		$('.navbar ul.main-menu li.dropdown > ul.sub-menu').removeAttr('style');
+	});
 
-	$('#menu-toggle').click(function() {
-		$('.navigation').slideToggle(300);
-		return false;
+	$('.navbar ul.main-menu li.dropdown > a').click(function() {
+		$(this).parent('li').siblings('.dropdown').find('ul.sub-menu').slideUp(300);
+		$(this).siblings('ul.sub-menu').slideToggle(300);
 	});
 
 	$(window).resize(function() {
 		if ($(window).width() > 767) {
-			$('.navigation').removeAttr('style');
+			$('.navbar .navigation').removeAttr('style');
+			$('.navbar ul.main-menu li.dropdown > ul.sub-menu').removeAttr('style');
 		}
 	});
 
