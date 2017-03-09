@@ -7,38 +7,97 @@
 $(document).ready(function() {
 
 	/* RWD 導航列 */
+
+	var $navigation = $('.navbar .navigation');
+	var $all_subMenu = $('.navbar ul.main-menu li.dropdown > ul.sub-menu');
+	var $closeNavbar = $('#main ,#footer');
+
+	if ($(window).width() <= 767) {
+		$('body').css('margin-top', '55px');
+		$('.navbar').addClass('fixed');
+	}
+
 	$('.navbar .menu-toggle').click(function() {
-		$('.navbar .navigation').slideToggle(300);
-		$('.navbar ul.main-menu li.dropdown > ul.sub-menu').removeAttr('style');
+		if ($navigation.hasClass('side-slided')) {
+
+			if ($navigation.hasClass('pushed')) {
+				$navigation.removeClass('pushed');
+				$('body').css('overflow', 'auto');
+			} else {
+				$navigation.addClass('pushed');
+				$('body').css('overflow', 'hidden');
+			}
+		} else {
+
+			if ($navigation.css('display') === 'block') {
+				$('body').css('overflow', 'auto');
+			} else {
+				$('body').css('overflow', 'hidden');
+			}
+
+			$navigation.slideToggle(300);
+		}
+
+		$all_subMenu.removeAttr('style');
 	});
 
 	$('.navbar ul.main-menu li.dropdown > a').click(function() {
-		$(this).parent('li').siblings('.dropdown').find('ul.sub-menu').slideUp(300);
-		$(this).siblings('ul.sub-menu').slideToggle(300);
+		if ($(window).width() <= 767) {
+			$(this).parent('li').siblings('.dropdown').find('ul.sub-menu').slideUp(300);
+			$(this).siblings('ul.sub-menu').slideToggle(300);
+		}
+	});
+
+	$closeNavbar.click(function() {
+		if ($(window).width() <= 767) {
+
+			if ($navigation.hasClass('side-slided pushed')) {
+				$navigation.removeClass('pushed');
+				$('body').css('overflow', 'auto');
+				$all_subMenu.removeAttr('style');
+			}else
+			if ($navigation.css('display') === 'block' && !$navigation.hasClass('side-slided')) {
+				$navigation.slideToggle(300);
+				$('body').css('overflow', 'auto');
+				$all_subMenu.removeAttr('style');
+			}
+		}
 	});
 
 	$(window).resize(function() {
 		if ($(window).width() > 767) {
-			$('.navbar .navigation').removeAttr('style');
-			$('.navbar ul.main-menu li.dropdown > ul.sub-menu').removeAttr('style');
+			$('body').removeAttr('style');
+			$('.navbar').removeClass('fixed');
+			$all_subMenu.removeAttr('style');
+
+			if ($navigation.hasClass('side-slided')) {
+				$navigation.removeClass('pushed');
+			} else {
+				$navigation.removeAttr('style');
+			}
+		}
+
+		if ($(window).width() <= 767) {
+			$('body').css('margin-top', '55px');
+			$('.navbar').addClass('fixed');
 		}
 	});
 
 
-	const ACTIVE = 'active';
-
 	/* slider-ad */
-	var controlItems = $('.slider-ad ol.controls > li');
-	var innerItems = $('.slider-ad ul.inner > li');
+
+	const ACTIVE = 'active';
+	var $controlItems = $('.slider-ad ol.controls > li');
+	var $innerItems = $('.slider-ad ul.inner > li');
 
 	var adSliderClick = function() {
 		var controlClick = $(this);
 		var controlActive = controlClick.siblings('.' + ACTIVE);
-		var innerClick = innerItems.eq(controlClick.index());
+		var innerClick = $innerItems.eq(controlClick.index());
 		var innerActive = innerClick.siblings('.' + ACTIVE);
 
 		/* # 防止連點的Bug */
-		controlItems.off('click', adSliderClick);
+		$controlItems.off('click', adSliderClick);
 
 		if (controlClick.index() !== controlActive.index()) {
 
@@ -57,10 +116,10 @@ $(document).ready(function() {
 		}
 
 		/* # 防止連點的Bug */
-		setTimeout(function() {controlItems.on('click', adSliderClick);},500);
+		setTimeout(function() {$controlItems.on('click', adSliderClick);},500);
 	};
 
-	controlItems.on('click', adSliderClick);
+	$controlItems.on('click', adSliderClick);
 
 
 	/* All question-answer */
@@ -85,4 +144,32 @@ $(document).ready(function() {
 
 	questionItems.find('.question').on('click', questionClick);
 
+
+	/**
+	 * 以下為修正多餘的margin-bottom
+	 */
+
+	/* 格線系統加上computer-only或mobile-only的元素時之情況 */
+
+	var $computerOnly = $('.grid > .wide.computer-only');
+
+	if ($(window).width() <= 767) {
+		if ($computerOnly.next().length === 0) {
+			$computerOnly.prev().css('margin-bottom', '0');
+		}
+	}
+
+	$(window).resize(function() {
+		if ($computerOnly.next().length === 0) {
+			if ($(window).width() <= 767) {
+				$computerOnly.prev().css('margin-bottom', '0');
+			} else {
+				$computerOnly.prev().removeAttr('style');
+			}
+		}
+	});
+
+	/* 修改格線系統內的最後一個子元素，須加上.wide上加入fix-last-bottom才能幫助移除 */
+
+	$('.grid > .wide.fix-last-bottom').children().last().css('margin-bottom', '0');
 });

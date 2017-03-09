@@ -16,42 +16,44 @@
     <header id="header">
         <div class="navbar clear-float">
             <div class="container">
-                <a class="logo" href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
+                <div class="logo">
+                    <a href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
+                </div>
                 <div class="menu-toggle"><img src="../assets/images/menu_button.png" alt="menu_button"></div>
-                <nav class="navigation">
+                <nav class="navigation side-slided">
                     <ul class="main-menu">
                         <li><a href="../index.html">首頁</a></li>
                         <li class="dropdown">
-                            <a class="active" href="#">特色內頁</a>
+                            <a>特色內頁</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
+                                    <a href="../views/ad-page.html"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon fa fa-gift"></i>最新消息</a>
+                                    <a href="../views/news-page.html"><i class="icon fa fa-gift"></i>最新消息</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="icon fa fa-gift"></i>價格表</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#"><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</i></a>
+                                    <a><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">App</a></li>
-                                        <li><a href="#">Solution</a></li>
+                                        <li><a href="../views/service-app.html">App</a></li>
+                                        <li><a href="../views/service-solution.html">Solution</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">關於我們</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="../views/about-page.html">關於我們</a></li>
+                        <li><a class="active" href="../views/question-answer-page.html">FAQ</a></li>
                         <li class="dropdown">
-                            <a href="#">活動快訊</a>
+                            <a>活動快訊</a>
                             <ul class="sub-menu">
-                                <li><a href="#">快訊-首頁</a></li>
-                                <li><a href="#">快訊-內頁</a></li>
+                                <li><a href="../views/activity.html">快訊-首頁</a></li>
+                                <li><a href="../views/activity-info-page.html">快訊-內頁</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">聯絡我們</a></li>
+                        <li><a href="../views/contact-page.html">聯絡我們</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,77 +68,75 @@
 
         <div class="question-answer-page">
             <div class="container">
-                <div class="four grid">
+                <div class="four grid mobile-stack-one">
                     <div class="three wide">
-                        <div class="page-post">
-                            <h1 class="post-title">常見問題的標題</h1>
-                            <div class="post-content">
-                                <ul class="question-answer">
-                                    <li class="active">
-                                        <h3 class="question">Responsive Theme</h3>
-                                        <div class="answer">
-                                            <p>There are many variations the passa available but majority have desktop publishing lipsum page editors printing and typesetting it has been the words.</p>
+                        <div class="page-post has-sidebar">
+                            <h1 class="title-left large">常見問題的標題</h1>
+                            <ul class="question-answer">
+                                <li class="active">
+                                    <h3 class="question">Responsive Theme</h3>
+                                    <div class="answer post-content">
+                                        <p>There are many variations the passa available but majority have desktop publishing lipsum page editors printing and typesetting it has been the words.</p>
 
-                                            <div class="post-image-items">
-                                                <ul class="two grid more-relaxed mobile-stack-one bottom-space">
-                                                    <li class="one wide">
-                                                        <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
-                                                        <h3 class="item-title">Internet Marketing</h3>
-                                                        <p class="item-intro">Lorem Ipsum, you need to be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                                    </li>
-                                                    <li class="one wide">
-                                                        <img src="../assets/images/post-content-img-2.png" alt="post-content-img">
-                                                        <h3 class="item-title">Website Design</h3>
-                                                        <p class="item-intro">Predefined chunks you need be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <ul class="list-arrow-circle">
-                                                <li>測試清單1測試清單1</li>
-                                                <li>測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2</li>
-                                                <li>測試清單3測試清單3測試清單3</li>
+                                        <div class="post-image-items">
+                                            <ul class="two grid more-relaxed mobile-stack-one space-bottom">
+                                                <li class="one wide">
+                                                    <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
+                                                    <h3 class="item-title">Internet Marketing</h3>
+                                                    <p class="item-intro">Lorem Ipsum, you need to be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                                                </li>
+                                                <li class="one wide">
+                                                    <img src="../assets/images/post-content-img-2.png" alt="post-content-img">
+                                                    <h3 class="item-title">Website Design</h3>
+                                                    <p class="item-intro">Predefined chunks you need be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                                                </li>
                                             </ul>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <h3 class="question">Cross Browser Support</h3>
-                                        <div class="answer">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h3 class="question">Responsive Theme</h3>
-                                        <div class="answer">
-                                            <p>There are many variations the passa available but majority have desktop publishing lipsum page editors printing and typesetting it has been the words.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h3 class="question">Cross Browser Support</h3>
-                                        <div class="answer">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
 
-                                            <div class="post-image-items">
-                                                <ul class="two grid more-relaxed mobile-stack-one bottom-space">
-                                                    <li class="one wide">
-                                                        <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
-                                                        <h3 class="item-title">Internet Marketing</h3>
-                                                        <p class="item-intro">中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試</p>
-                                                    </li>
-                                                    <li class="one wide">
-                                                        <img src="../assets/images/post-content-img-2.png" alt="post-content-img">
-                                                        <h3 class="item-title">Website Design</h3>
-                                                        <p class="item-intro">Predefined chunks you need be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                        <ul class="list-arrow-circle">
+                                            <li>測試清單1測試清單1</li>
+                                            <li>測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2測試清單2</li>
+                                            <li>測試清單3測試清單3測試清單3</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="question">Cross Browser Support</h3>
+                                    <div class="answer post-content">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="question">Responsive Theme</h3>
+                                    <div class="answer post-content">
+                                        <p>There are many variations the passa available but majority have desktop publishing lipsum page editors printing and typesetting it has been the words.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3 class="question">Cross Browser Support</h3>
+                                    <div class="answer post-content">
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+
+                                        <div class="post-image-items">
+                                            <ul class="two grid more-relaxed mobile-stack-one space-bottom">
+                                                <li class="one wide">
+                                                    <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
+                                                    <h3 class="item-title">Internet Marketing</h3>
+                                                    <p class="item-intro">中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試中文測試</p>
+                                                </li>
+                                                <li class="one wide">
+                                                    <img src="../assets/images/post-content-img-2.png" alt="post-content-img">
+                                                    <h3 class="item-title">Website Design</h3>
+                                                    <p class="item-intro">Predefined chunks you need be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="one wide">
+                    <div class="one wide computer-only">
                         <div class="page-sidebar">
                             <h1 class="title-left">特別的 Banners</h1>
                             <div class="specail-banner">
@@ -180,7 +180,7 @@
                             </ul>
                             <h1 class="title-left">Site Advertisements</h1>
                             <div class="site-ad">
-                                <div class="two grid bottom-space">
+                                <div class="two grid space-bottom">
                                     <div class="one wide">
                                         <a href="#"><img src="../assets/images/site-ad-1.jpg" alt="site-ad"></a>
                                     </div>

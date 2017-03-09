@@ -1,6 +1,7 @@
 /**
  * 導航列 navber menu
  * 2017-03-03 製作RWD
+ * 2017-03-06 16:26:08 製作RWD改成側邊欄
  *
  * @author Shane Yi <scps950613@gmail.com>
  * @date 2017-01-19
@@ -9,14 +10,15 @@
 .navbar {
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    position: relative;
 }
 
 /* 可為浮動的導行列 */
 .navbar.fixed {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     position: fixed;
-    right: 0;
     left: 0;
+    right: 0;
     top: 0;
     z-index: 10;
 }
@@ -30,7 +32,11 @@
 .navbar .logo {
     float: left;
     font-size: 23px;
-    margin: 8px 0;
+    padding: 8px 0;
+}
+
+.navbar .logo a {
+    display: inline-block;
 }
 
 .navbar .logo img {
@@ -123,12 +129,16 @@
     float: right;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
-    text-rendering: auto;
     line-height: 17px;
+    text-rendering: auto;
 }
 
 .navbar .menu-toggle {
     display: none;
+}
+
+.navbar .navigation .main-menu a {
+    cursor: pointer;
 }
 
 
@@ -137,7 +147,9 @@
 @media (max-width: 767px) {
 
     .navbar .logo {
-        margin: 5px 0;
+        float: none;
+        padding: 5px 0;
+        text-align: center;
     }
 
     .navbar .logo img {
@@ -145,23 +157,20 @@
     }
 
     .navbar .menu-toggle {
-        border: 1px solid #e2e2e2;
+        position: absolute;
+        top: 2.5px;
+        left: 0;
         border-radius: 4px;
         color: #777;
         cursor: pointer;
         display: block;
-        float: right;
         font-size: 20px;
-        margin: 11px 15px 0 0;
-    }
-
-    .navbar .menu-toggle:hover {
-        background-color: #e2e2e2;
+        margin: 0;
     }
 
     .navbar .menu-toggle img {
-        height: 30px;
-        width: 35px;
+        height: 50px;
+        width: 55px;
     }
 
     .navbar .navigation {
@@ -173,6 +182,24 @@
         float: none;
         margin: 0 -15px;
         padding: 10px 30px;
+        -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .navigation.side-slided {
+        display: block;
+        left: -82%;
+        height: 100%;
+        overflow: auto;
+        position: fixed;
+        width: 82%;
+        -webkit-transition: -webkit-transform .35s ease-in-out;
+        transition: transform .35s ease-in-out;
+    }
+
+    .navbar .navigation.side-slided.pushed {
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
     }
 
     .navbar ul.main-menu > li {
@@ -231,7 +258,6 @@
         background-color: transparent;
         border-color: transparent;
         color: #777;
-        text-decoration: underline;
     }
 
     .navbar ul.sub-menu ul.sub-menu {

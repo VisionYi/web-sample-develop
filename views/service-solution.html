@@ -16,42 +16,44 @@
     <header id="header">
         <div class="navbar clear-float">
             <div class="container">
-                <a class="logo" href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
+                <div class="logo">
+                    <a href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
+                </div>
                 <div class="menu-toggle"><img src="../assets/images/menu_button.png" alt="menu_button"></div>
-                <nav class="navigation">
+                <nav class="navigation side-slided">
                     <ul class="main-menu">
                         <li><a href="../index.html">首頁</a></li>
                         <li class="dropdown">
-                            <a class="active" href="#">特色內頁</a>
+                            <a class="active">特色內頁</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
+                                    <a href="../views/ad-page.html"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon fa fa-gift"></i>最新消息</a>
+                                    <a href="../views/news-page.html"><i class="icon fa fa-gift"></i>最新消息</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="icon fa fa-gift"></i>價格表</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#"><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</i></a>
+                                    <a><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">App</a></li>
-                                        <li><a href="#">Solution</a></li>
+                                        <li><a href="../views/service-app.html">App</a></li>
+                                        <li><a href="../views/service-solution.html">Solution</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">關於我們</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="../views/about-page.html">關於我們</a></li>
+                        <li><a href="../views/question-answer-page.html">FAQ</a></li>
                         <li class="dropdown">
-                            <a href="#">活動快訊</a>
+                            <a>活動快訊</a>
                             <ul class="sub-menu">
-                                <li><a href="#">快訊-首頁</a></li>
-                                <li><a href="#">快訊-內頁</a></li>
+                                <li><a href="../views/activity.html">快訊-首頁</a></li>
+                                <li><a href="../views/activity-info-page.html">快訊-內頁</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">聯絡我們</a></li>
+                        <li><a href="../views/contact-page.html">聯絡我們</a></li>
                     </ul>
                 </nav>
             </div>
@@ -66,13 +68,40 @@
 
         <div class="service-solution">
             <div class="container">
-                <h1 class="post-title">服務Solution的標題</h1>
-                <div class="four grid">
+                <h1 class="title-left large">服務Solution的標題</h1>
+                <div class="four grid mobile-stack-one">
                     <div class="three wide">
-                        <div class="page-post">
+                        <div class="page-post has-sidebar">
                             <div class="image-frame">
                                 <img src="../assets/images/ad-slider-1.jpg" alt="ad-picture">
                             </div>
+                            <ul class="solution-spec mobile-only">
+                                <li>
+                                    <h3 class="spec-title">Author</h3>
+                                    <i class="icon fa fa-user"></i>
+                                    Mugiwara Kiwolen
+                                </li>
+                                <li>
+                                    <h3 class="spec-title">Date Created</h3>
+                                    <i class="icon fa fa-calendar"></i>
+                                    2017-02-20
+                                </li>
+                                <li>
+                                    <h3 class="spec-title">Categories</h3>
+                                    <i class="icon fa fa-user"></i>
+                                    <a href="#">Web Design</a>, PSD Template
+                                </li>
+                                <li>
+                                    <h3 class="spec-title">Project URL</h3>
+                                    <i class="icon fa fa-external-link"></i>
+                                    <a href="#">See The Project</a>
+                                </li>
+                                <li>
+                                    <h3 class="spec-title">Project URL</h3>
+                                    <i class="icon fa fa-external-link"></i>
+                                    See The Project
+                                </li>
+                            </ul>
                             <div class="post-content">
                                 <p>There are many variations of passages of Lorem Ipsum available, but theses majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                                 <div class="text-around-picture clear-float">
@@ -80,7 +109,7 @@
                                     <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
                                 </div>
                                 <div class="post-icon-items">
-                                    <ul class="two grid more-relaxed mobile-stack-one bottom-space">
+                                    <ul class="two grid more-relaxed mobile-stack-one space-bottom">
                                         <li class="one wide">
                                             <div class="icon"><i class="fa fa-desktop"></i></div>
                                             <div class="content">
@@ -100,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="one wide">
+                    <div class="one wide computer-only">
                         <ul class="solution-spec">
                             <li>
                                 <h3 class="spec-title">Author</h3>
@@ -131,9 +160,10 @@
                     </div>
                 </div>
 
+
                 <h1 class="title-left bottom-dashed">我們的客戶 Logo</h1>
                 <div class="client-logo">
-                    <div class="four grid relaxed mobile-stack-two bottom-space">
+                    <div class="four grid relaxed mobile-stack-two space-bottom">
                         <div class="one wide">
                             <a href="#"><img src="../assets/images/client-logo-1.jpg" alt="client-logo picture"></a>
                             <div class="logo-link">
