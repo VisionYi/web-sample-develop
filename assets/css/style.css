@@ -1,11 +1,9 @@
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Open Sans, Microsoft JhengHei, sans-serif;
+    font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -41,7 +39,7 @@ ul {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: Open Sans, Microsoft JhengHei, sans-serif;
+    font-family: "Open Sans", "Microsoft JhengHei", sans-serif;
     font-size: 16px;
     font-weight: 700;
     margin: 0;
@@ -79,7 +77,18 @@ ul {
 }
 
 
-/* 格線系統 */
+/**
+ * 格線系統 (最多可分為12格):
+ *  - grid層可加上元素:
+ *      + relaxed, more-relaxed
+ *      + mobile-stack-one, mobile-stack-two
+ *      + space-bottom
+ *
+ *  - wide層可加上元素:
+ *      + one-floated
+ *      + computer-only
+ *      + fix-last-bottom (有JavaScript組合)
+ */
 
 .grid {
     box-sizing: border-box;
@@ -761,7 +770,11 @@ ul {
 }
 
 
-/* 以下為共用的 UI元件 */
+/**
+ * 以下為共用的 UI元件
+ */
+
+/* 標題系列 (em當作副標題)*/
 
 .title-center {
     display: flex;
@@ -770,14 +783,20 @@ ul {
     justify-content: center;
     height: 120px;
     width: 100%;
-    margin: 0;
-    font-size: 28px;
-    font-weight: 300;
 }
 
-.title-center .subtitle {
+.title-center h1,
+.title-center h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.title-center em {
+    color: #777;
     font-size: 15px;
-    margin: 20px 0 0 0;
+    font-style: normal;
+    margin-top: 20px;
 }
 
 .title-left {
@@ -793,11 +812,21 @@ ul {
     margin-bottom: 20px;
 }
 
-.title-left .subtitle {
+.title-left em {
+    color: #777;
     display: inline-block;
     font-size: 15px;
-    margin: 0 0 0 5px;
+    font-style: normal;
+    margin-left: 5px;
 }
+
+
+/**
+ * 框架元件:
+ *  - ul > li 的固定項目items (只會有標題、圖片或icon、一段內文)
+ *  - image-frame(圖片邊框)
+ *  - responsive-16by9, responsive-4by3 (專用給iframe框架支援RWD)
+ */
 
 ul.flex-row {
     display: flex;
@@ -813,17 +842,71 @@ ul.flex-column {
     justify-content: flex-start;
 }
 
-ul > li .item-title {
+ul.items > li h3,
+ul.items > li h4,
+ul.items > li h5,
+.items > ul > li h3,
+.items > ul > li h4,
+.items > ul > li h5 {
     color: #000;
     font-size: 18px;
     font-weight: 700;
 }
 
-ul > li .item-intro {
+ul.items > li p,
+.items > ul > li p {
     color: #777;
     font-size: 14px;
     margin: 0;
 }
+
+.image-frame {
+    border: 5px solid #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.image-frame img {
+    width: 100%;
+}
+
+.responsive-16by9,
+.responsive-4by3 {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.responsive-16by9 {
+    padding-bottom: 56.25%;
+}
+
+.responsive-4by3 {
+    padding-bottom: 75%;
+}
+
+.responsive-16by9 iframe,
+.responsive-4by3 iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+}
+
+
+/**
+ * 固定元件:
+ *  - specail-banner
+ *  - last-news
+ *  - clients-say
+ *  - question-answer(有JavaScript組合)
+ *  - calendar
+ */
 
 .specail-banner {
     display: flex;
@@ -851,7 +934,7 @@ ul > li .item-intro {
     margin: 30px 0 20px 0;
 }
 
-.specail-banner p {
+.specail-banner .content p {
     margin-bottom: 30px;
 }
 
@@ -870,30 +953,34 @@ ul.last-news > li.active {
     display: block;
 }
 
-ul.last-news > li .news-title {
+ul.last-news > li .title {
     color: #404040;
     font-size: 16px;
     margin: 0;
 }
 
-ul.last-news > li .news-date {
+ul.last-news > li .date {
     color: #777;
     font-size: 12px;
     margin: 0;
     margin-bottom: 15px;
 }
 
-ul.last-news > li .news-content {
+ul.last-news > li .content {
     color: #777;
     margin: 0;
     margin-bottom: 25px;
 }
 
-.last-news .look-more {
+ul.last-news > li .content p:last-child {
+    margin-bottom: 0;
+}
+
+ul.last-news > li .look-more {
     color: #0076f9;
 }
 
-.last-news .look-more:hover {
+ul.last-news > li .look-more:hover {
     color: #404040;
 }
 
@@ -902,6 +989,10 @@ ul.clients-say > li .content-text {
     font-style: italic;
     margin-bottom: 12px;
     padding: 30px 30px 60px 30px;
+}
+
+ul.clients-say > li .content-text p:last-child {
+    margin-bottom: 0;
 }
 
 ul.clients-say > li .author {
@@ -924,6 +1015,7 @@ ul.clients-say > li .author .name {
 }
 
 ul.clients-say > li .author .name .position {
+    color: #777;
     font-size: 14px;
     font-style: italic;
     margin: 0;
@@ -938,6 +1030,7 @@ ul.question-answer > li .question {
     color: #404040;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
     margin: 0;
     padding: 13px 20px 13px 50px;
     position: relative;
@@ -959,13 +1052,16 @@ ul.question-answer > li .question:before {
     padding: 3px 4px 2px 4px;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 14px;
-    text-rendering: auto;
 }
 
 ul.question-answer > li .answer {
     color: #777;
     display: none;
     margin: 0 20px 15px 50px;
+}
+
+ul.question-answer > li .answer p:last-child {
+    margin-bottom: 0;
 }
 
 ul.question-answer > li.active .answer {
@@ -986,22 +1082,8 @@ ul.question-answer > li.active .question:before {
     content: "\f068";
 }
 
-
-
-.image-frame {
-    border: 5px solid #fff;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-}
-
-.image-frame img {
-    width: 100%;
-}
-
 .calendar {
     background-color: #f9f9f9;
-    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 60px;
@@ -1022,6 +1104,12 @@ ul.question-answer > li.active .question:before {
 }
 
 
+/**
+ * 內頁元件:
+ *  - page-title
+ *  - page-sidebar(側邊欄框架)
+ *  - page-post(主內頁有文章的框架)
+ */
 
 .page-title {
     background: url('../images/page-title-bg.jpg') no-repeat;
@@ -1029,7 +1117,7 @@ ul.question-answer > li.active .question:before {
     padding: 28px 0;
 }
 
-.page-title .title {
+.page-title h1 {
     color: #fff;
     font-size: 36px;
     font-weight: 300;
@@ -1057,10 +1145,6 @@ ul.question-answer > li.active .question:before {
 
 .page-sidebar .specail-banner .banner-image {
     max-width: 110px;
-}
-
-.page-sidebar .site-ad {
-    /* overflow: hidden; */
 }
 
 .page-sidebar .site-ad img {
@@ -1112,28 +1196,27 @@ ul.question-answer > li.active .question:before {
     margin-bottom: 0;
 }
 
-
-.page-post .post-content .post-image-items,
-.page-post .post-content .post-icon-items {
+.page-post .post-content .image-group.items,
+.page-post .post-content .icon-group.items {
     margin-bottom: 40px;
     overflow: hidden;
 }
 
-.page-post .post-content .post-image-items a:hover {
+.page-post .post-content .image-group.items a:hover {
     opacity: 0.8;
 }
 
-.page-post .post-content .post-image-items img {
+.page-post .post-content .image-group.items img {
     margin-bottom: 10px;
     width: 100%;
 }
 
-.page-post .post-content .post-icon-items .grid > .wide {
+.page-post .post-content .icon-group.items ul.grid > li.wide {
     display: flex;
     flex-direction: row;
 }
 
-.page-post .post-content .post-icon-items .icon {
+.page-post .post-content .icon-group.items .icon {
     font-size: 40px;
     color: #0896b8;
     width: 90px;
@@ -1146,12 +1229,14 @@ ul.question-answer > li.active .question:before {
     margin-right: 25px;
 }
 
-.page-post .post-content .post-icon-items .icon > .fa {
+.page-post .post-content .icon-group.items .icon > .fa {
     width: 90px;
 }
 
-.page-post .post-content .post-icon-items .item-title,
-.page-post .post-content .post-image-items .item-title {
+.page-post .post-content .icon-group.items h3,
+.page-post .post-content .icon-group.items h4,
+.page-post .post-content .image-group.items h3,
+.page-post .post-content .image-group.items h4 {
     font-size: 23px;
     line-height: 23px;
     margin: 0 0 16px 0;
@@ -1251,13 +1336,13 @@ ul.question-answer > li.active .question:before {
     text-align: center;
 }
 
-.category-service ul.service-items > li {
+.category-service ul.items > li {
     margin: 30px 15px 20px 15px;
     text-align: center;
     width: 255px;
 }
 
-.category-service ul.service-items > li .icon {
+.category-service ul.items > li .icon {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 62px;
@@ -1265,8 +1350,9 @@ ul.question-answer > li.active .question:before {
     height: 62px;
 }
 
-.category-service ul.service-items > li .icon:hover,
-.category-service ul.service-items > li .item-title:hover {
+.category-service ul.items > li .icon:hover,
+.category-service ul.items > li h3:hover,
+.category-service ul.items > li h4:hover {
     color: #9ac63d;
 }
 
@@ -1324,6 +1410,10 @@ ul.question-answer > li.active .question:before {
     margin-right: 5%;
 }
 
+.about-us .intro p {
+    margin-bottom: 30px;
+}
+
 .about-us .intro ul.list {
     font-size: 15px;
     font-weight: 600;
@@ -1357,11 +1447,11 @@ ul.question-answer > li.active .question:before {
     height: 80px;
 }
 
-.feature ul.feature-items {
+.feature ul.items {
     height: 380px;
 }
 
-.feature ul.feature-items > li {
+.feature ul.items > li {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1370,7 +1460,7 @@ ul.question-answer > li.active .question:before {
     height: 126px;
 }
 
-.feature ul.feature-items > li .item-icon {
+.feature ul.items > li .item-icon {
     color: #000;
     font-size: 35px;
     height: 50px;
@@ -1378,13 +1468,13 @@ ul.question-answer > li.active .question:before {
     width: 50px;
 }
 
-.feature ul.feature-items > li .item-img {
+.feature ul.items > li .item-img {
     height: 90px;
     margin-right: 30px;
     width: 90px;
 }
 
-.feature ul.feature-items > li .item-title {
+.feature ul.items > li h3 {
     margin: 0 0 5px 0;
 }
 
@@ -1402,13 +1492,13 @@ ul.question-answer > li.active .question:before {
     margin-bottom: 20px;
 }
 
-.feature.less-than-three ul.feature-items {
+.feature.less-than-three ul.items {
     flex-wrap: nowrap;
     height: 100%;
     margin-left: 5%;
 }
 
-.feature.less-than-three ul.feature-items > li {
+.feature.less-than-three ul.items > li {
     align-items: flex-start;
     height: 100%;
     width: auto;
@@ -1416,23 +1506,23 @@ ul.question-answer > li.active .question:before {
     margin-bottom: 50px;
 }
 
-.feature.less-than-three ul.feature-items > li:last-child {
+.feature.less-than-three ul.items > li:last-child {
     margin-bottom: 0;
 }
 
-.feature.less-than-three ul.feature-items > li .item-title {
+.feature.less-than-three ul.items > li h3 {
     font-size: 23px;
     margin: 0 0 10px 0;
 }
 
 @media (max-width: 767px) {
-    .feature.less-than-three ul.feature-items,
-    .feature ul.feature-items {
+    .feature.less-than-three ul.items,
+    .feature ul.items {
         height: 100%;
         margin-left: 0;
     }
-    .feature.less-than-three ul.feature-items > li,
-    .feature ul.feature-items > li {
+    .feature.less-than-three ul.items > li,
+    .feature ul.items > li {
         margin-right: 0;
         width: 100%;
     }
@@ -1473,7 +1563,7 @@ ul.question-answer > li.active .question:before {
     font-size: 14px;
 }
 
-.purchase-price ul.pricing-table > li:first-child {
+.purchase-price ul.pricing-table > li.first {
     background-color: #c2c2c2;
     border-top: 1px solid #e2e2e2;
     color: #fff;
@@ -1482,7 +1572,7 @@ ul.question-answer > li.active .question:before {
     padding: 35px 0;
 }
 
-.purchase-price ul.pricing-table > li:first-child .remark {
+.purchase-price ul.pricing-table > li.first .remark {
     color: #fff;
     display: block;
     font-size: 16px;
@@ -1496,7 +1586,7 @@ ul.question-answer > li.active .question:before {
     opacity: 0.8;
 }
 
-ul.pricing-table.bright > li:first-child,
+ul.pricing-table.bright > li.first,
 ul.pricing-table.bright > li .button {
     background-color: #0076f9;
 }
@@ -1592,7 +1682,6 @@ ul.pricing-table.bright > li {
     content: "\f105";
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
-    text-rendering: auto;
 }
 
 .main-footer .contact-form {
@@ -1680,15 +1769,15 @@ ul.pricing-table.bright > li {
     overflow: hidden;
 }
 
-.banner-bg .banner .banner-title {
+.banner-bg .banner p {
     color: #0076f9;
     font-size: 23px;
+    font-weight: bold;
     margin: 0;
 }
 
-.banner-bg .banner .banner-title i {
+.banner-bg .banner p strong {
     color: #000;
-    font-style: normal;
 }
 
 .banner-bg .banner .button {
@@ -1772,14 +1861,16 @@ ul.pricing-table.bright > li {
     margin-right: 8px;
 }
 
-.service-solution ul.solution-spec > li .spec-title {
+.service-solution ul.solution-spec > li h3,
+.service-solution ul.solution-spec > li h4 {
     color: #a9a9a9;
     font-size: 15px;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
 
-.service-solution ul.solution-spec > li .spec-title:after {
+.service-solution ul.solution-spec > li h3:after,
+.service-solution ul.solution-spec > li h4:after {
     content: ' :';
 }
 
@@ -1825,7 +1916,7 @@ ul.pricing-table.bright > li {
     border-bottom: 1px solid #f0f0f0;
     color: #404040;
     font-size: 16px;
-    margin: 0 0 3px 0;
+    margin-bottom: 3px;
     padding-bottom: 8px;
 }
 
@@ -1838,36 +1929,18 @@ ul.pricing-table.bright > li {
     margin: 0;
 }
 
+.about-page ul.history-record > li .content p:last-child {
+    margin-bottom: 0;
+}
+
 .about-page .youtube-video .video-intro {
     padding: 10px 10px 5px 10px;
 }
 
-.responsive-16by9,
-.responsive-4by3 {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-}
-
-.responsive-16by9 {
-    padding-bottom: 56.25%;
-}
-
-.responsive-4by3 {
-    padding-bottom: 75%;
-}
-
-.responsive-16by9 .responsive-item,
-.responsive-4by3 .responsive-item {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border: 0;
-    bottom: 0;
-    left: 0;
-    top: 0;
+@media (max-width: 767px) {
+    .about-page ul.question-answer {
+        margin-bottom: 0;
+    }
 }
 
 
@@ -1904,6 +1977,11 @@ ul.pricing-table.bright > li {
     color: #777;
     display: block;
     margin-bottom: 5px;
+}
+
+.contact-page .page-form label.require:after {
+    color: #777;
+    content: "*";
 }
 
 .contact-page .page-form input[type="text"],
@@ -2088,6 +2166,15 @@ ul.pricing-table.bright > li {
     margin: 0;
 }
 
+.scroll-gallery ul.scroll-container > li .intro p {
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.scroll-gallery ul.scroll-container > li .intro p:last-child {
+    margin-bottom: 0;
+}
 
 /**
  * 常見問題內頁 question-answer-page
@@ -2121,7 +2208,6 @@ ul.pricing-table.bright > li {
     padding-left: 4.8px;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 12px;
-    text-rendering: auto;
 }
 
 
@@ -2144,4 +2230,3 @@ ul.pricing-table.bright > li {
  *
  * @date 2017-02-24 14:21:42
  */
-

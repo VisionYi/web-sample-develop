@@ -149,7 +149,7 @@ $(document).ready(function() {
 	 * 以下為修正多餘的margin-bottom
 	 */
 
-	/* 格線系統加上computer-only或mobile-only的元素時之情況 */
+	/* 格線系統加上computer-only的元素時之情況 */
 
 	var $computerOnly = $('.grid > .wide.computer-only');
 
