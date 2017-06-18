@@ -5,9 +5,5 @@ ehthumbs.db
 # library dependencies
 assets/lib/*
 
-# sublime_text3 的專案設定檔
-web-develop.sublime-project
-web-develop.sublime-workspace
-
 # specification documents
 doc/*

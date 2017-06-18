@@ -1,20 +1,19 @@
 /**
- * 導航列 navber menu
- * 2017-03-03 製作RWD
- * 2017-03-06 16:26:08 製作RWD改成側邊欄
+ * 導航列 menu
+ * 2017-03-06 製作 RWD 改成側邊欄
  *
  * @author Shane Yi <scps950613@gmail.com>
  * @date 2017-01-19
  */
 
-.navbar {
-    background-color: #fff;
+.menu {
+    background-color: #f8f8f8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
     position: relative;
 }
 
 /* 可為浮動的導行列 */
-.navbar.fixed {
+.menu.fixed {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     position: fixed;
     left: 0;
@@ -23,72 +22,85 @@
     z-index: 10;
 }
 
-.navbar .icon {
+
+/* 訂定基本底層元素 */
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu .icon {
 	height: 15px;
 	margin-right: 10px;
 	width: 15px;
 }
 
-.navbar img.icon {
+.menu img.icon {
     margin-bottom: 1px;
+    vertical-align: middle;
 }
 
-.navbar .logo {
+.menu .menu-title {
     float: left;
-    font-size: 23px;
-    padding: 8px 0;
+    display: block;
+    font-size: 20px;
+    line-height: 55px;
+    color: #000;
 }
 
-.navbar .logo a {
-    display: inline-block;
+.menu .menu-title img {
+    max-height: 45px;
+    vertical-align: middle;
 }
 
-.navbar .logo img {
-    max-height: 55px;
-}
-
-.navbar .navigation {
+.menu .navigation {
     float: right;
     height: auto;
 	width: auto;
 }
 
-/* navbar > menu */
-.navbar ul.main-menu li {
+
+/* menu > main-menu 第1層(固定在上面的) */
+
+.menu ul.main-menu li {
     position: relative;
 }
 
-.navbar ul.main-menu li a {
-    text-decoration: none;
-}
-
-.navbar ul.main-menu > li {
+.menu ul.main-menu > li {
     display: inline-block;
 }
 
-.navbar ul.main-menu > li > a {
+.menu ul.main-menu > li > a {
     color: #777;
     display: block;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 16px;
-    padding: 30px 15px;
+    padding: 20px 0;
+    margin: 0 15px;
 }
 
-.navbar ul.main-menu > li:hover > a,
-.navbar ul.main-menu > li > a.active,
-.navbar ul.main-menu > li:hover > a.active {
+.menu ul.main-menu > li:hover > a,
+.menu ul.main-menu > li > a.active,
+.menu ul.main-menu > li:hover > a.active {
     color: #23dbdb;
 }
 
 
-/* navbar > menu > dropdown (下拉選單) */
-.navbar ul.main-menu li:hover > ul.sub-menu {
+/* menu > main-menu > dropdown (下拉選單，第2層) */
+.menu ul.main-menu li:hover > ul.sub-menu {
     display: block;
 }
 
-/* level 2 */
-.navbar ul.sub-menu {
+/* level 2 (下拉選單，定訂基本元素) */
+.menu ul.sub-menu {
     border: 1px solid #e2e2e2;
     border-radius: 0 0 2px 2px;
     display: none;
@@ -97,85 +109,82 @@
     width: 150px;
     z-index: 11;
 }
-.navbar ul.sub-menu > li {
+
+.menu ul.sub-menu > li {
     border-top: 1px solid #e2e2e2;
 }
 
-.navbar ul.sub-menu > li:first-child {
+.menu ul.sub-menu > li:first-child {
     border-top: none;
 }
 
-.navbar ul.sub-menu > li > a {
+.menu ul.sub-menu > li > a {
     background-color: #fff;
-    border-left: 5px solid transparent;
+    border-left: 3px solid transparent;
     color: #777;
     display: block;
     font-size: 15px;
     padding: 12px 10px;
 }
 
-/* level 3+ */
-.navbar ul.sub-menu ul.sub-menu {
+/* level 3+ (第3層元素) */
+.menu ul.sub-menu ul.sub-menu {
     left: 149px;
     top: 0;
     z-index: 12;
 }
 
-.navbar ul.sub-menu > li > a:hover {
+.menu ul.sub-menu > li > a:hover,
+.menu ul.sub-menu > li.dropdown:hover > a {
     background-color: #777;
-    border-left: 5px solid #23dbdb;
+    border-left: 3px solid #23dbdb;
     color: #fff;
 }
 
-.navbar ul.sub-menu > li.dropdown > a:after {
-    content: "\f105";
+.menu ul.sub-menu > li.dropdown > a:after {
+    content: ">";
     float: right;
-    font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     line-height: 20px;
 }
 
-.navbar .menu-toggle {
+.menu .menu-toggle {
     display: none;
 }
 
-.navbar .navigation .main-menu a {
+.menu .navigation .main-menu a {
     cursor: pointer;
 }
 
 
-/* 以下都是RWD版的 meun */
+/* 以下都是 RWD 版的 menu */
 
 @media (max-width: 767px) {
 
-    .navbar .logo {
+    .menu .menu-title {
         float: none;
-        padding: 5px 0;
+        font-size: 18px;
         text-align: center;
     }
 
-    .navbar .logo img {
-        max-height: 45px;
-    }
-
-    .navbar .menu-toggle {
-        position: absolute;
-        top: 2.5px;
-        left: 0;
+    .menu .menu-toggle {
+        display: block;
         border-radius: 4px;
         color: #777;
         cursor: pointer;
-        display: block;
         font-size: 20px;
         margin: 0;
+        position: absolute;
+        top: 2.5px;
+        left: 0;
     }
 
-    .navbar .menu-toggle img {
+    .menu .menu-toggle img {
         height: 50px;
         width: 55px;
     }
 
-    .navbar .navigation {
+    .menu .navigation {
         background-color: #e2e2e2;
         clear: both;
         display: none;
@@ -185,86 +194,90 @@
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .navbar .navigation.side-slided {
+    .menu .navigation.side-slide {
         display: block;
-        left: -50%;
+        left: -60%;
         height: 100%;
         overflow: auto;
         position: fixed;
-        width: 50%;
+        width: 60%;
         transition: transform .35s ease-in-out;
     }
 
-    .navbar .navigation.side-slided.pushed {
+    .menu .navigation.side-slide.pushed {
         transform: translate3d(100%,0,0);
     }
 
-    .navbar ul.main-menu > li {
+    .menu ul.main-menu > li {
         border-bottom: 1px solid #c2c2c2;
         display: block;
     }
 
-    .navbar ul.main-menu > li:last-child {
+    .menu ul.main-menu > li:last-child {
         border: none;
     }
 
-    .navbar ul.main-menu > li > a {
+    .menu ul.main-menu > li > a {
+        margin: 0;
         padding: 12px 6px;
     }
 
-    .navbar ul.main-menu > li.dropdown > a:after {
+    .menu ul.main-menu > li.dropdown > a:after {
         content: "\f107";
         float: right;
         font: normal normal normal 14px/1 FontAwesome;
         font-size: inherit;
+        font-weight: bold;
     }
 
-    .navbar ul.sub-menu > li.dropdown > a:after {
-        content: "\f0d7";
+    .menu ul.sub-menu > li.dropdown > a:after {
+        content: "\f107";
+        font: normal normal normal 14px/1 FontAwesome;
         padding-right: 1px;
     }
 
-    .navbar ul.main-menu > li:hover > a {
+    .menu ul.main-menu > li:hover > a {
         color: #777;
     }
 
-    .navbar ul.sub-menu {
+    .menu ul.sub-menu {
         border: none;
         padding: 0 0 10px 20px;
         position: static;
         width: auto;
     }
 
-    .navbar ul.sub-menu > li {
+    .menu ul.sub-menu > li {
         border: none;
         border-bottom: 1px solid #c2c2c2;
     }
 
-    .navbar ul.sub-menu > li:last-child {
+    .menu ul.sub-menu > li:last-child {
         border-bottom: none;
     }
 
-    .navbar ul.sub-menu > li > a {
+    .menu ul.sub-menu > li > a {
         background-color: transparent;
         border: none;
         padding: 12px 6px;
     }
 
-    .navbar ul.sub-menu > li > a:hover {
+    .menu ul.sub-menu > li > a:hover,
+    .menu ul.sub-menu > li.dropdown:hover > a {
         background-color: transparent;
-        border-color: transparent;
+        border-left: 5px solid transparent;
         color: #777;
     }
 
-    .navbar ul.sub-menu ul.sub-menu {
+    .menu ul.sub-menu ul.sub-menu {
         padding-left: 30px;
     }
 
-    .navbar ul.sub-menu > li.dropdown:last-child ul.sub-menu {
+    .menu ul.sub-menu > li.dropdown:last-child ul.sub-menu {
         padding-bottom: 0;
     }
 
-    .navbar ul.main-menu li:hover > ul.sub-menu {
+    .menu ul.main-menu li:hover > ul.sub-menu {
         display: none;
     }
 }

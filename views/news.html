@@ -6,7 +6,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ad Page</title>
+    <title>News</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/grid-system.css">
@@ -22,7 +22,7 @@
                 <div class="navigation side-slide">
                     <ul class="main-menu">
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="../views/news.html">News</a></li>
+                        <li><a class="active" href="../views/news.html">News</a></li>
                         <li><a href="../views/event.html">Event</a></li>
                         <li class="dropdown">
                             <a>Service</a>
@@ -48,46 +48,36 @@
     <section id="main">
         <div class="page-title">
             <div class="container">
-                <h1>企業廣告</h1>
+                <h1>最新消息</h1>
             </div>
         </div>
 
-        <div class="ad-page">
+        <div class="news-home">
             <div class="container">
                 <div class="grid-12 tablet-1">
                     <div class="column-9">
                         <div class="page-post has-sidebar">
-                            <div class="image-frame">
-                                <img src="../assets/images/ad-slider-1.jpg" alt="ad picture">
-                            </div>
-
-                            <div class="post-header">
-                                <div class="calendar">
-                                    <div class="date">10</div>
-                                    <div class="month">六月</div>
-                                </div>
-                                <h2 class="title-left large">標題測試</h2>
-                            </div>
-                            <div class="post-content has-calendar">
-                                <div class="text-around-picture">
-                                    <img src="../assets/images/post_content_img_2.jpg" alt="文繞圖">
-                                    <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
-                                </div>
-                                <div class="image-group items">
-                                    <ul class="grid-12 more-relaxed mobile-1">
-                                        <li class="column-6">
-                                            <img src="../assets/images/post_content_img_1.jpg" alt="">
-                                            <h3>標題測試-1</h3>
-                                            <p>內容測試--內容測試--內容測試--</p>
-                                        </li>
-                                        <li class="column-6">
-                                            <img src="../assets/images/post_content_img_2.jpg" alt="">
-                                            <h3>標題測試-2</h3>
-                                            <p>內容測試--內容測試--內容測試--</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul class="list-article">
+                                <li>
+                                    <h2>標題測試-1</h2>
+                                    <div class="date">2017-06-10 ~ 2017-06-10</div>
+                                    <p>內容測試--內容測試--內容測試--</p>
+                                    <a href="../views/news-page.html" class="continue-read">看更多</a>
+                                </li>
+                                <li>
+                                    <h2>標題測試-2</h2>
+                                    <div class="date">2017-06-10 ~ 2017-06-10</div>
+                                    <p>內容測試--內容測試--內容測試--</p>
+                                    <a href="../views/news-page.html" class="continue-read">看更多</a>
+                                </li>
+                                <li>
+                                    <h2>標題測試-3</h2>
+                                    <div class="date">2017-06-10 ~ 2017-06-10</div>
+                                    <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
+                                    <a href="../views/news-page.html" class="continue-read">看更多</a>
+                                </li>
+                            </ul>
+                            <ul class="pagination"></ul>
                         </div>
                     </div>
                     <div class="column-3 computer-only">
@@ -196,5 +186,23 @@
     </footer>
     <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/main.js"></script>
+    <script type="text/javascript" src="../assets/js/pagination.js"></script>
+    <script>
+        $(document).ready(function () {
+            var config = {
+                pagination: {
+                    selector: $('ul.pagination'),
+                    items: 18,
+                    itemsOnPage: 3,
+                    currentPage: 1,
+                    maxSize: 5,
+                    hrefTextPrefix: '#',
+                }
+            };
+
+            var pag = new Pagination(config.pagination);
+            pag.loadURLHash().init().clickRun();
+        });
+    </script>
 </body>
 </html>

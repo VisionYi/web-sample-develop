@@ -2,58 +2,44 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8">
-    <title>news-page</title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Page</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/grid-system.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/menu.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body>
     <header id="header">
-        <nav class="navbar clear-float">
+        <nav class="menu">
             <div class="container">
-                <div class="logo">
-                    <a href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
-                </div>
+                <div class="menu-title"><a href="../index.html"><img src="../assets/images/logo.png" alt="logo"></a></div>
                 <div class="menu-toggle"><img src="../assets/images/menu_button.png" alt="menu_button"></div>
-                <div class="navigation side-slided">
+                <div class="navigation side-slide">
                     <ul class="main-menu">
-                        <li><a href="../index.html">首頁</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../views/news.html">News</a></li>
+                        <li><a href="../views/event.html">Event</a></li>
                         <li class="dropdown">
-                            <a class="active">特色內頁</a>
+                            <a>Service</a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a href="../views/ad-page.html"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
-                                </li>
-                                <li>
-                                    <a href="../views/news-page.html"><i class="icon fa fa-gift"></i>最新消息</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon fa fa-gift"></i>價格表</a>
-                                </li>
                                 <li class="dropdown">
-                                    <a><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</a>
+                                    <a><img class="icon" src="../assets/images/menu_icon_1.png" alt="icon-menu">Items</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../views/service-app.html">App</a></li>
-                                        <li><a href="../views/service-solution.html">Solution</a></li>
+                                        <li><a href="../views/category-app.html">App</a></li>
+                                        <li><a href="../views/category-solution.html">Solution</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="../views/about-page.html">關於我們</a></li>
-                        <li><a href="../views/question-answer-page.html">FAQ</a></li>
-                        <li class="dropdown">
-                            <a>活動快訊</a>
-                            <ul class="sub-menu">
-                                <li><a href="../views/activity.html">快訊-首頁</a></li>
-                                <li><a href="../views/activity-info-page.html">快訊-內頁</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="../views/contact-page.html">聯絡我們</a></li>
+                        <li><a href="../views/price-page.html">Price</a></li>
+                        <li><a href="../views/faq-page.html">FAQ</a></li>
+                        <li><a href="../views/about.html">About</a></li>
+                        <li><a href="../views/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,92 +48,75 @@
     <section id="main">
         <div class="page-title">
             <div class="container">
-                <h1>news page 最新消息的大標題</h1>
+                <h1>最新消息內頁</h1>
             </div>
         </div>
 
         <div class="news-page">
             <div class="container">
-                <div class="four grid mobile-stack-one">
-                    <div class="three wide">
+                <div class="grid-12 tablet-1">
+                    <div class="column-9">
                         <div class="page-post has-sidebar">
-                            <div class="image-frame">
-                                <img src="../assets/images/ad-slider-1.jpg" alt="ad-picture">
-                            </div>
-
                             <div class="post-header">
                                 <div class="calendar">
-                                    <div class="date">28</div>
-                                    <div class="month">二月</div>
+                                    <div class="date">10</div>
+                                    <div class="month">六月</div>
                                 </div>
-                                <h2 class="title-left large">內文的標題</h2>
+                                <h2 class="title-left large">標題測試</h2>
                             </div>
-                            <div class="post-content">
-                                <div class="ten grid mobile-stack-one">
-                                    <div class="nine wide one-floated fix-last-bottom">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but theses majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but theses majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-
-                                        <div class="text-around-picture clear-float">
-                                            <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
-                                            <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for uncover many web sites., and a search for uncover many web sites.</p>
-                                        </div>
-                                        <div class="image-group items">
-                                            <ul class="two grid more-relaxed mobile-stack-one space-bottom">
-                                                <li class="one wide">
-                                                    <img src="../assets/images/post-content-img-1.png" alt="post-content-img">
-                                                    <h3>Internet Marketing</h3>
-                                                    <p>Lorem Ipsum, you need to be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                                </li>
-                                                <li class="one wide">
-                                                    <img src="../assets/images/post-content-img-2.png" alt="post-content-img">
-                                                    <h3>Website Design</h3>
-                                                    <p>Predefined chunks you need be sure there anythin embarrassing hidden in the middle of text in the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                            <div class="post-content has-calendar">
+                                <div class="text-around-picture">
+                                    <img src="../assets/images/post_content_img_2.jpg" alt="文繞圖">
+                                    <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
+                                </div>
+                                <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
+                                <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
+                                <div class="image-group items">
+                                    <ul class="grid-12 more-relaxed mobile-1">
+                                        <li class="column-6">
+                                            <img src="../assets/images/post_content_img_1.jpg" alt="">
+                                            <h3>標題測試-1</h3>
+                                            <p>內容測試--內容測試--內容測試--</p>
+                                        </li>
+                                        <li class="column-6">
+                                            <img src="../assets/images/post_content_img_2.jpg" alt="">
+                                            <h3>標題測試-2</h3>
+                                            <p>內容測試--內容測試--內容測試--</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="one wide computer-only">
+                    <div class="column-3 computer-only">
                         <div class="page-sidebar">
-                            <h3 class="title-left">特別的 Banners</h3>
-                            <div class="specail-banner">
+                            <h3 class="title-left">Special Banners</h3>
+                            <div class="special-banner">
                                 <div class="banner-image">
                                     <img src="../assets/images/banners-img-2.png" alt="banners image">
                                 </div>
                                 <div class="content">
-                                    <h4 class="title">想成為司機嗎</h4>
-                                    <p>成為司機成為司機成為司機成為司機成為司機</p>
-                                    <a href="#" class="small button full-with">現在註冊</a>
+                                    <h4 class="title">標題測試?</h4>
+                                    <p>內容測試--內容測試--內容測試--</p>
+                                    <a href="#" class="small button full-width">現在註冊</a>
                                 </div>
                             </div>
                             <h3 class="title-left">最新消息</h3>
-                            <ul class="last-news">
-                                <li>
-                                    <h4 class="title">消息11</h4>
-                                    <div class="date">2017-02-10 上午 05:55</div>
-                                    <div class="content">
-                                        <p>消息內容!消息內容!消息內容!消息內容! 消息內容!消息內容!消息內容!</p>
-                                    </div>
-                                </li>
+                            <ul class="news">
                                 <li class="active">
-                                    <h4 class="title">測試 消息22</h4>
-                                    <div class="date">2017-01-18 上午 15:00</div>
+                                    <h3 class="title">標題測試</h3>
+                                    <div class="date">2017-01-10 上午 15:00</div>
                                     <div class="content">
-                                        <p>消息內容消息內容消息內容消息內容消息內容消息內容一消息內容消息內容消息內容消息內容消息內容消息內容一消息內容消息內容消息內容消息內容消息內容消息內容一消息內容消息內容消息內容消息內容消息內容消息內容一</p>
+                                        <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
                                     </div>
-                                    <a class="look-more" href="views/news-page.html">看更多</a>
+                                    <a class="look-more" href="#">看更多</a>
                                 </li>
                             </ul>
                             <h3 class="title-left">我們的客戶說 Clients Say</h3>
-                            <ul class="clients-say">
-                                <li>
+                            <ul class="client">
+                                <li class="active">
                                     <div class="content-text">
-                                        <p>這是內容顧客說話喔喔這是內容顧客說話喔喔這是內容顧客說話喔喔這是內容顧客說話喔喔這是內容顧客說話喔喔</p>
+                                        <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
                                     </div>
                                     <div class="author">
                                         <img src="../assets/images/clients-say.png" alt="clients-say of author">
@@ -160,18 +129,18 @@
                             </ul>
                             <h3 class="title-left">Site Advertisements</h3>
                             <div class="site-ad">
-                                <div class="two grid space-bottom">
-                                    <div class="one wide">
-                                        <a href="#"><img src="../assets/images/site-ad-1.jpg" alt="site-ad"></a>
+                                <div class="grid-12 equal-spacing">
+                                    <div class="column-6">
+                                        <a href="#"><img src="../assets/images/site-ad.jpg" alt="site-ad"></a>
                                     </div>
-                                    <div class="one wide">
-                                        <a href="#"><img src="../assets/images/site-ad-1.jpg" alt="site-ad"></a>
+                                    <div class="column-6">
+                                        <a href="#"><img src="../assets/images/site-ad.jpg" alt="site-ad"></a>
                                     </div>
-                                    <div class="one wide">
-                                        <a href="#"><img src="../assets/images/site-ad-1.jpg" alt="site-ad"></a>
+                                    <div class="column-6">
+                                        <a href="#"><img src="../assets/images/site-ad.jpg" alt="site-ad"></a>
                                     </div>
-                                    <div class="one wide">
-                                        <a href="#"><img src="../assets/images/site-ad-1.jpg" alt="site-ad"></a>
+                                    <div class="column-6">
+                                        <a href="#"><img src="../assets/images/site-ad.jpg" alt="site-ad"></a>
                                     </div>
                                 </div>
                             </div>
@@ -181,33 +150,32 @@
             </div>
         </div>
     </section>
-
     <footer id="footer">
         <div class="main-footer">
             <div class="container">
-                <div class="four grid relaxed mobile-stack-two">
-                    <div class="two wide">
+                <div class="grid-12 relaxed mobile-1 tablet-2">
+                    <div class="column-6">
                         <img class="logo" src="../assets/images/footer-logo.png" alt="logo web">
-                        <p class="company-intro">Little Neko is a web design and development studio. 公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊</p>
+                        <p class="company-intro">公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊</p>
                     </div>
-                    <div class="one wide">
+                    <div class="column-3">
                         <h2 class="title-left">快速連結</h2>
                         <div class="fast-links">
                             <a href="#">Home Page Variations</a>
-                            <a href="#">Awsome Slidershows</a>
+                            <a href="#">Awesome SliderShows</a>
                             <a href="#">Home Page Variations</a>
                             <a href="#">Home Page Variations</a>
-                            <a href="#">Awsome Slidershows</a>
+                            <a href="#">Awesome SliderShows</a>
                             <a href="#">Home Page Variations</a>
                         </div>
                     </div>
-                    <div class="one wide">
+                    <div class="column-3">
                         <form class="contact-form">
                             <h3>聯絡我們</h3>
                             <input type="text" name="name" placeholder="Name">
                             <input type="text" name="e-mail" placeholder="E-mail">
                             <textarea name="message" placeholder="Message" rows="3"></textarea>
-                            <button class="small button full-with">發送</button>
+                            <button class="small button full-width">發送</button>
                         </form>
                     </div>
                 </div>
@@ -218,7 +186,7 @@
                 <div class="social-network">
                     <a href="#" title="facebook" target="_blank"><i class="icon fa fa-facebook"></i></a>
                     <a href="#" title="google-plus" target="_blank"><i class="icon fa fa-google-plus"></i></a>
-                    <a href="#" title="line-at-生活圈" target="_blank"><i class="icon line-at"></i></a>
+                    <a href="#" title="line-at" target="_blank"><i class="icon line-at"></i></a>
                 </div>
                 All Rights Reserved 2017 © 哈哈.com
             </div>

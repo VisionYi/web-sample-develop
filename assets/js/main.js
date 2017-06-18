@@ -6,170 +6,171 @@
  */
 $(document).ready(function() {
 
-	/* RWD 導航列 */
+    /* menu (RWD) 導行列 */
 
-	var $navigation = $('.navbar .navigation');
-	var $all_subMenu = $('.navbar ul.main-menu li.dropdown > ul.sub-menu');
-	var $closeNavbar = $('#main ,#footer');
+	var $navigation = $('.menu .navigation');
+    var $all_subMenu = $('.menu ul.main-menu li.dropdown > ul.sub-menu');
+    var $closeNavbar = $('#main ,#footer');
 
-	if ($(window).width() <= 767) {
-		$('body').css('margin-top', '55px');
-		$('.navbar').addClass('fixed');
-	}
+    if ($(window).width() <= 767) {
+        $('body').css('margin-top', '55px');
+        $('.menu').addClass('fixed');
+    }
 
-	$('.navbar .menu-toggle').click(function() {
-		if ($navigation.hasClass('side-slided')) {
+    $('.menu .menu-toggle').click(function() {
+        if ($navigation.hasClass('side-slide')) {
 
-			if ($navigation.hasClass('pushed')) {
-				$navigation.removeClass('pushed');
-				$('body').css('overflow', 'auto');
-			} else {
-				$navigation.addClass('pushed');
-				$('body').css('overflow', 'hidden');
-			}
-		} else {
+            if ($navigation.hasClass('pushed')) {
+                $navigation.removeClass('pushed');
+                $('body').css('overflow', 'auto');
+            } else {
+                $navigation.addClass('pushed');
+                $('body').css('overflow', 'hidden');
+            }
+        } else {
 
-			if ($navigation.css('display') === 'block') {
-				$('body').css('overflow', 'auto');
-			} else {
-				$('body').css('overflow', 'hidden');
-			}
+            if ($navigation.css('display') === 'block') {
+                $('body').css('overflow', 'auto');
+            } else {
+                $('body').css('overflow', 'hidden');
+            }
 
-			$navigation.slideToggle(300);
-		}
+            $navigation.slideToggle(300);
+        }
 
-		$all_subMenu.removeAttr('style');
-	});
+        $all_subMenu.removeAttr('style');
+    });
 
-	$('.navbar ul.main-menu li.dropdown > a').click(function() {
-		if ($(window).width() <= 767) {
-			$(this).parent('li').siblings('.dropdown').find('ul.sub-menu').slideUp(300);
-			$(this).siblings('ul.sub-menu').slideToggle(300);
-		}
-	});
+    $('.menu ul.main-menu li.dropdown > a').click(function() {
+        if ($(window).width() <= 767) {
+            $(this).parent('li').siblings('.dropdown').find('ul.sub-menu').slideUp(300);
+            $(this).siblings('ul.sub-menu').slideToggle(300);
+        }
+    });
 
-	$closeNavbar.click(function() {
-		if ($(window).width() <= 767) {
+    $closeNavbar.click(function() {
+        if ($(window).width() <= 767) {
 
-			if ($navigation.hasClass('side-slided pushed')) {
-				$navigation.removeClass('pushed');
-				$('body').css('overflow', 'auto');
-				$all_subMenu.removeAttr('style');
-			}else
-			if ($navigation.css('display') === 'block' && !$navigation.hasClass('side-slided')) {
-				$navigation.slideToggle(300);
-				$('body').css('overflow', 'auto');
-				$all_subMenu.removeAttr('style');
-			}
-		}
-	});
+            if ($navigation.hasClass('side-slide pushed')) {
+                $navigation.removeClass('pushed');
+                $('body').css('overflow', 'auto');
+                $all_subMenu.removeAttr('style');
+            }else
+            if ($navigation.css('display') === 'block' && !$navigation.hasClass('side-slide')) {
+                $navigation.slideToggle(300);
+                $('body').css('overflow', 'auto');
+                $all_subMenu.removeAttr('style');
+            }
+        }
+    });
 
-	$(window).resize(function() {
-		if ($(window).width() > 767) {
-			$('body').removeAttr('style');
-			$('.navbar').removeClass('fixed');
-			$all_subMenu.removeAttr('style');
+    $(window).resize(function() {
+        if ($(window).width() > 767) {
+            $('body').removeAttr('style');
+            $('.menu').removeClass('fixed');
+            $all_subMenu.removeAttr('style');
 
-			if ($navigation.hasClass('side-slided')) {
-				$navigation.removeClass('pushed');
-			} else {
-				$navigation.removeAttr('style');
-			}
-		}
+            if ($navigation.hasClass('side-slide')) {
+                $navigation.removeClass('pushed');
+            } else {
+                $navigation.removeAttr('style');
+            }
+        }
 
-		if ($(window).width() <= 767) {
-			$('body').css('margin-top', '55px');
-			$('.navbar').addClass('fixed');
-		}
-	});
+        if ($(window).width() <= 767) {
+            $('body').css('margin-top', '55px');
+            $('.menu').addClass('fixed');
+        }
+    });
 
 
-	/* slider-ad */
+	/* slides-ad */
 
 	const ACTIVE = 'active';
-	var $controlItems = $('.slider-ad ol.controls > li');
-	var $innerItems = $('.slider-ad ul.inner > li');
+	var ID_adSlider;
 
-	var adSliderClick = function() {
+	// 自動輪播的功能，設定 5 秒換一次
+	ID_adSlider = setInterval(adSliderAuto, 5000);
+
+	$(document).on('click', '.slides-ad ol.controls > li', adSliderClick);
+
+	function adSliderClick() {
 		var controlClick = $(this);
+		var innerClick = $('.slides-ad ul.inner > li').eq(controlClick.index());
 		var controlActive = controlClick.siblings('.' + ACTIVE);
-		var innerClick = $innerItems.eq(controlClick.index());
 		var innerActive = innerClick.siblings('.' + ACTIVE);
 
-		/* # 防止連點的Bug */
-		$controlItems.off('click', adSliderClick);
-
-		if (controlClick.index() !== controlActive.index()) {
-
-			controlActive.removeClass(ACTIVE);
-			controlClick.addClass(ACTIVE);
-
-			innerActive.fadeTo(250, 0.5,function() {
-				$(this).removeClass(ACTIVE);
-				$(this).removeAttr('style');
-
-				innerClick.fadeTo(250, 0.9,function() {
-					$(this).addClass(ACTIVE);
-					$(this).removeAttr('style');
-				});
-			});
+		if (controlClick.index() === controlActive.index()) {
+			return;
 		}
 
-		/* # 防止連點的Bug */
-		setTimeout(function() {$controlItems.on('click', adSliderClick);},500);
-	};
+		/* 防止連點的 Bug */
+		$(document).off('click', '.slides-ad ol.controls > li', adSliderClick);
 
-	$controlItems.on('click', adSliderClick);
+		adSliderSwitch(controlActive, controlClick, innerActive, innerClick);
+
+		/* 防止連點的 Bug */
+		setTimeout(function() {$(document).on('click', '.slides-ad ol.controls > li', adSliderClick);},600);
+
+		clearInterval(ID_adSlider);
+		ID_adSlider = setInterval(adSliderAuto, 5000);
+	}
+
+	function adSliderAuto() {
+		var controlActive = $('.slides-ad ol.controls > li.' + ACTIVE);
+		var innerActive = $('.slides-ad ul.inner > li.' + ACTIVE);
+		var inners = $('.slides-ad ul.inner > li');
+		var controlNext, innerNext;
+
+		// 假如 slider 沒有畫面產生或 slider 的數量少於 2 個的話，就不設置自動輪播
+		if (innerActive.length === 0 || inners.length < 2) {
+			clearInterval(ID_adSlider);
+			return;
+		}
+
+		controlNext = controlActive.next('li').length === 0 ?
+				      $('.slides-ad ol.controls > li:eq(0)') : controlActive.next('li');
+		innerNext = innerActive.next('li').length === 0 ?
+					  $('.slides-ad ul.inner > li:eq(0)') : innerActive.next('li');
+
+		adSliderSwitch(controlActive, controlNext, innerActive, innerNext);
+	}
+
+	function adSliderSwitch(controlActive, controlNext, innerActive, innerNext) {
+		controlActive.removeClass(ACTIVE);
+		controlNext.addClass(ACTIVE);
+
+		innerActive.fadeTo(200, 0.5, function() {
+			$(this).removeClass(ACTIVE);
+			$(this).removeAttr('style');
+
+			innerNext.fadeTo(400, 0.9, function() {
+				$(this).addClass(ACTIVE);
+				$(this).removeAttr('style');
+			});
+		});
+	}
 
 
-	/* All question-answer */
-	var questionItems = $('ul.question-answer > li');
+	/* All faq */
 
 	var questionClick = function() {
 		var itemClicked = $(this).parent('li');
 		var itemActive = itemClicked.siblings('.' + ACTIVE);
 
-		if (itemClicked.index() !== itemActive.index()) {
-
-			itemClicked.find('.answer').slideDown(300,function() {
-				$(this).parent('li').addClass(ACTIVE);
-				$(this).removeAttr('style');
-			});
-			itemActive.find('.answer').slideUp(300,function() {
-				$(this).parent('li').removeClass(ACTIVE);
-				$(this).removeAttr('style');
-			});
+		if (itemClicked.index() === itemActive.index()) {
+			return;
 		}
+
+		itemClicked.find('.answer').slideDown(300,function() {
+			$(this).parent('li').addClass(ACTIVE);
+			$(this).removeAttr('style');
+		});
+		itemActive.find('.answer').slideUp(300,function() {
+			$(this).parent('li').removeClass(ACTIVE);
+			$(this).removeAttr('style');
+		});
 	};
 
-	questionItems.find('.question').on('click', questionClick);
-
-
-	/**
-	 * 以下為修正多餘的margin-bottom
-	 */
-
-	/* 格線系統加上computer-only的元素時之情況 */
-
-	var $computerOnly = $('.grid > .wide.computer-only');
-
-	if ($(window).width() <= 767) {
-		if ($computerOnly.next().length === 0) {
-			$computerOnly.prev().css('margin-bottom', '0');
-		}
-	}
-
-	$(window).resize(function() {
-		if ($computerOnly.next().length === 0) {
-			if ($(window).width() <= 767) {
-				$computerOnly.prev().css('margin-bottom', '0');
-			} else {
-				$computerOnly.prev().removeAttr('style');
-			}
-		}
-	});
-
-	/* 修改格線系統內的最後一個子元素，須加上.wide上加入fix-last-bottom才能幫助移除 */
-
-	$('.grid > .wide.fix-last-bottom').children().last().css('margin-bottom', '0');
+	$(document).on('click', 'ul.faq li .question', questionClick);
 });

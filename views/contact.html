@@ -2,58 +2,44 @@
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8">
-    <title>contact-page</title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/grid-system.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/menu.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body>
     <header id="header">
-        <nav class="navbar clear-float">
+        <nav class="menu">
             <div class="container">
-                <div class="logo">
-                    <a href="../index.html"><img src="../assets/images/logo.png" alt="logo web"></a>
-                </div>
+                <div class="menu-title"><a href="../index.html"><img src="../assets/images/logo.png" alt="logo"></a></div>
                 <div class="menu-toggle"><img src="../assets/images/menu_button.png" alt="menu_button"></div>
-                <div class="navigation side-slided">
+                <div class="navigation side-slide">
                     <ul class="main-menu">
-                        <li><a href="../index.html">首頁</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../views/news.html">News</a></li>
+                        <li><a href="../views/event.html">Event</a></li>
                         <li class="dropdown">
-                            <a>特色內頁</a>
+                            <a>Service</a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a href="../views/ad-page.html"><img class="icon" src="../assets/images/img_24.png" alt="icon-menu">企業廣告</a>
-                                </li>
-                                <li>
-                                    <a href="../views/news-page.html"><i class="icon fa fa-gift"></i>最新消息</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon fa fa-gift"></i>價格表</a>
-                                </li>
                                 <li class="dropdown">
-                                    <a><img class="icon" src="../assets/images/img_25.png" alt="icon-menu">服務項目</a>
+                                    <a><img class="icon" src="../assets/images/menu_icon_1.png" alt="icon-menu">Items</a>
                                     <ul class="sub-menu">
-                                        <li><a href="../views/service-app.html">App</a></li>
-                                        <li><a href="../views/service-solution.html">Solution</a></li>
+                                        <li><a href="../views/category-app.html">App</a></li>
+                                        <li><a href="../views/category-solution.html">Solution</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="../views/about-page.html">關於我們</a></li>
-                        <li><a href="../views/question-answer-page.html">FAQ</a></li>
-                        <li class="dropdown">
-                            <a>活動快訊</a>
-                            <ul class="sub-menu">
-                                <li><a href="../views/activity.html">快訊-首頁</a></li>
-                                <li><a href="../views/activity-info-page.html">快訊-內頁</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="active" href="../views/contact-page.html">聯絡我們</a></li>
+                        <li><a href="../views/price-page.html">Price</a></li>
+                        <li><a href="../views/faq-page.html">FAQ</a></li>
+                        <li><a href="../views/about.html">About</a></li>
+                        <li><a class="active" href="../views/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,10 +54,10 @@
 
         <div class="contact-page">
             <div class="container">
-                <div class="two grid more-relaxed mobile-stack-one">
-                    <div class="one wide">
-                        <h2 class="title-left large">聯絡的大標題</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                <div class="grid-12 more-relaxed mobile-1">
+                    <div class="column-6">
+                        <h2 class="title-left large">聯絡標題</h2>
+                        <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
 
                         <h3 class="title-left">Contact Form</h3>
                         <form class="page-form" action="" method="" accept-charset="utf-8">
@@ -90,13 +76,13 @@
                             <button class="button" type="submit">傳送</button>
                         </form>
                     </div>
-                    <div class="one wide">
+                    <div class="column-6">
                         <div class="address-info">
                             <h3 class="title-left">聯絡地址</h3>
                             <p>
                                 <strong>公司的名稱</strong>
                                 <br>
-                                2901 Marmora Road, Glassgow, Seattle, WA 98122-1090
+                                內容測試--內容測試--內容測試--
                                 <br>
                                 Telephone: +1 1234-567-89000
                                 <br>
@@ -117,48 +103,33 @@
                 </div>
             </div>
         </div>
-
-        <div class="banner-bg computer-only">
-            <div class="container">
-                <div class="five grid mobile-stack-one">
-                    <div class="three wide banner">
-                        <p>這是置入性行銷, <strong>測試</strong>這是置入性行銷, <strong>測試!</strong></p>
-                        <a href="#" class="button">現在購買</a>
-                    </div>
-                    <div class="two wide banner">
-                        <img src="../assets/images/banner1.png" alt="banner">
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
-
     <footer id="footer">
         <div class="main-footer">
             <div class="container">
-                <div class="four grid relaxed mobile-stack-two">
-                    <div class="two wide">
+                <div class="grid-12 relaxed mobile-1 tablet-2">
+                    <div class="column-6">
                         <img class="logo" src="../assets/images/footer-logo.png" alt="logo web">
-                        <p class="company-intro">Little Neko is a web design and development studio. 公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊</p>
+                        <p class="company-intro">公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊公司簡介資訊</p>
                     </div>
-                    <div class="one wide">
+                    <div class="column-3">
                         <h2 class="title-left">快速連結</h2>
                         <div class="fast-links">
                             <a href="#">Home Page Variations</a>
-                            <a href="#">Awsome Slidershows</a>
+                            <a href="#">Awesome SliderShows</a>
                             <a href="#">Home Page Variations</a>
                             <a href="#">Home Page Variations</a>
-                            <a href="#">Awsome Slidershows</a>
+                            <a href="#">Awesome SliderShows</a>
                             <a href="#">Home Page Variations</a>
                         </div>
                     </div>
-                    <div class="one wide">
+                    <div class="column-3">
                         <form class="contact-form">
                             <h3>聯絡我們</h3>
                             <input type="text" name="name" placeholder="Name">
                             <input type="text" name="e-mail" placeholder="E-mail">
                             <textarea name="message" placeholder="Message" rows="3"></textarea>
-                            <button class="small button full-with">發送</button>
+                            <button class="small button full-width">發送</button>
                         </form>
                     </div>
                 </div>
@@ -169,7 +140,7 @@
                 <div class="social-network">
                     <a href="#" title="facebook" target="_blank"><i class="icon fa fa-facebook"></i></a>
                     <a href="#" title="google-plus" target="_blank"><i class="icon fa fa-google-plus"></i></a>
-                    <a href="#" title="line-at-生活圈" target="_blank"><i class="icon line-at"></i></a>
+                    <a href="#" title="line-at" target="_blank"><i class="icon line-at"></i></a>
                 </div>
                 All Rights Reserved 2017 © 哈哈.com
             </div>
