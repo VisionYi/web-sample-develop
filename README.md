@@ -1,15 +1,17 @@
 # [:octocat: web-sample-develop](https://github.com/VisionYi/web-sample-develop)
 
 ## Contents
-這是網站樣板開發，於大學時期實習的網站設計內容。日期從 2017-01-18 ~ 2017-04
-此外專案內有附上實習過後，以後可能會用到的函式庫 :
-- [js library]()
+這是網站樣板開發，於**大學時期實習**的網站設計內容。<br>
+開發時程: 2017-01 ~ 2017-05
+
+#### 此外專案內有附上實習過後，以後可能會用到的函式庫 :
+- [js library](https://github.com/VisionYi/web-sample-develop/blob/master/otherLibrary/js.md)
     - 使用 jquery 的 ajax 撈取資料的改良版
     - 取得 url GET 參數
     - 把格式化的字串時間傳換成 JavaScript 的專屬時間
     - 比較時間大小
     - 取得現在的時間 (格式化後之字串)
-- [php library]()
+- [php library](https://github.com/VisionYi/web-sample-develop/blob/master/otherLibrary/php.md)
     - 驗證 http request 的資料
 
 ## Log 日誌
@@ -73,6 +75,3 @@ Update : 2017-06-18
 
 * 2017-03-13
     - 改善網頁樣板, 符合W3C規範
-
-###
-
