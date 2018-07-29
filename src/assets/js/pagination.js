@@ -198,3 +198,5 @@ Pagination.prototype.getItemsOnPage = function() {
 Pagination.prototype.getTotalPage = function() {
     return this.config.totalPage;
 };
+
+export default Pagination;

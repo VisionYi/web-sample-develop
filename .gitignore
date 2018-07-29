@@ -1,9 +1,18 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# library dependencies
-assets/lib/*
+.DS_Store
+node_modules
+dist
 
 # specification documents
-doc/*
+doc
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#Parcel
+.cache
+
+# VS Code
+jsconfig.json
+.vscode

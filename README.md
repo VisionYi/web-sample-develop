@@ -14,64 +14,71 @@
 - [php library](https://github.com/VisionYi/web-sample-develop/blob/master/otherLibrary/php.md)
     - 驗證 http request 的資料
 
+## 開發專案使用指令
+```shell
+# 初始化專案
+npm install
+
+# 開啟專案 server
+npm run start
+
+# 建置發布的資料 dist
+npm run build
+
+# 自動佈署到 Github Page 上
+npm run deploy
+```
+
 ## Log 日誌
-Update : 2017-06-18
-- 更新最後的靜態網頁配置
-- 新增 otherLibrary 函式庫
+### Update
+- 2017-06-18
+    - 更新最後的靜態網頁配置
+    - 新增 otherLibrary 函式庫
+
+- 2018-07-29
+    - 為了優化網頁載入與減少 request 請求，提高效率，導入 **Parcel** 零配置打包工具
+    - 更改目錄結構，全部放入 src 資料夾中
+    - dist 資料夾為可發布的靜態資源
+    - JS 由於不能再直接設置全域變數了，改用 ES6 import/export 的方式載入
 
 ### 首頁樣板
-
-* 2017-01-19
+- 2017-01-19
     - 導航列 menu
-
-* 2017-01-23
+- 2017-01-23
     - 廣告 slider-ad
-
-* 2017-01-25
+- 2017-01-25
     - 服務項目 category-service
     - 關於我們 about-us
-
-* 2017-02-06
+- 2017-02-06
     - 特色 feature
-
-* 2017-02-07
+- 2017-02-07
     - 採購價錢 purchase-price
     - 消息訊息 board-news
-
-* 2017-02-09
+- 2017-02-09
     - 頁面底部 - footer
     - 置入性行銷 banner
-
-* 2017-02-13 ~ 2017-02-15
+- 2017-02-13 ~ 2017-02-15
     - 製作ppt 撰寫規格文件 首頁樣板
-
 ### 內頁樣板
 
-* 2017-02-16
+- 2017-02-16
     - 企業廣告內頁 ad-page
-
-* 2017-02-20
+- 2017-02-20
     - 服務項目 service-app
-
-* 2017-02-21
+- 2017-02-21
     - 服務項目 service-solution
     - 關於我們內頁 about-page
     - 聯絡我們內頁 contact-page
-
-* 2017-02-22
+- 2017-02-22
     - 滿版背景內容 full-bg-wrapper
     - 滑動畫廊 scroll-gallery
-
-* 2017-02-24
+- 2017-02-24
     - 常見問題內頁 question-answer-page
     - 活動快訊 activity
     - 活動快訊內頁 activity-info-page
-
-* 2017-03-02
+- 2017-03-02
     - 製作ppt 撰寫規格文件 內頁樣板
-
-* 2017-03-03 . 2017-03-06 . 2017-03-09
+- 2017-03-03 . 2017-03-06 . 2017-03-09
     - RWD版面製作
-
-* 2017-03-13
+- 2017-03-13
     - 改善網頁樣板, 符合W3C規範

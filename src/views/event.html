@@ -6,7 +6,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <title>Event</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/grid-system.css">
@@ -23,7 +23,7 @@
                     <ul class="main-menu">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../views/news.html">News</a></li>
-                        <li><a href="../views/event.html">Event</a></li>
+                        <li><a class="active" href="../views/event.html">Event</a></li>
                         <li class="dropdown">
                             <a>Service</a>
                             <ul class="sub-menu">
@@ -39,7 +39,7 @@
                         <li><a href="../views/price-page.html">Price</a></li>
                         <li><a href="../views/faq-page.html">FAQ</a></li>
                         <li><a href="../views/about.html">About</a></li>
-                        <li><a class="active" href="../views/contact.html">Contact</a></li>
+                        <li><a href="../views/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -48,62 +48,41 @@
     <section id="main">
         <div class="page-title">
             <div class="container">
-                <h1>Contact Us 聯絡我們</h1>
+                <h1>活動快訊</h1>
             </div>
         </div>
 
-        <div class="contact-page">
+        <div class="event">
             <div class="container">
-                <div class="grid-12 more-relaxed mobile-1">
-                    <div class="column-6">
-                        <h2 class="title-left large">聯絡標題</h2>
-                        <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
-
-                        <h3 class="title-left">Contact Form</h3>
-                        <form class="page-form" action="" method="" accept-charset="utf-8">
-                            <label class="require" for="name">姓名</label>
-                            <input type="text" name="name" id="name">
-
-                            <label class="require" for="e-mail">E-mail</label>
-                            <input type="text" name="e-mail" id="e-mail">
-
-                            <label for="website">Website</label>
-                            <input type="text" name="website" id="website">
-
-                            <label class="require" for="message">Your Message</label>
-                            <textarea name="message" id="message" rows="10"></textarea>
-
-                            <button class="button" type="submit">傳送</button>
-                        </form>
-                    </div>
-                    <div class="column-6">
-                        <div class="address-info">
-                            <h3 class="title-left">聯絡地址</h3>
-                            <p>
-                                <strong>公司的名稱</strong>
-                                <br>
-                                內容測試--內容測試--內容測試--
-                                <br>
-                                Telephone: +1 1234-567-89000
-                                <br>
-                                FAX: +1 0123-4567-8900
-                                <br>
-                                E-mail: <a href="#" title="e-mail">mail@companyname</a>
-                                <br>
-                                Website: <a href="#" title="siteName">www.yoursitename</a>
-                            </p>
-                        </div>
-                        <h3 class="title-left">地圖找地址</h3>
-                        <div class="image-frame">
-                            <div class="responsive-16by9">
-                                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d133240.0904950497!2d120.25953481370377!3d22.624135577481155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04fd209f4835%3A0x54511e7d86c87c09!2z6auY6ZuE5biC6byT5bGx5Y2A6auY6ZuE!5e0!3m2!1szh-TW!2stw!4v1497785202274"></iframe>
-                            </div>
+                <div class="page-post">
+                    <div class="post-content">
+                        <div class="image-group items">
+                            <ul class="grid-12 more-relaxed mobile-1 tablet-2">
+                                <li class="column-4">
+                                    <a href="../views/event-page.html">
+                                        <img src="../assets/images/post_content_img_1.jpg" alt="event">
+                                        <h3>標題測試-1</h3>
+                                    </a>
+                                    <div class="date">2017-06-10 ~ 2017-06-10</div>
+                                    <p>內容測試--內容測試--內容測試--</p>
+                                </li>
+                                <li class="column-4">
+                                    <a href="../views/event-page.html">
+                                        <img src="../assets/images/post_content_img_2.jpg" alt="event">
+                                        <h3>標題測試-2</h3>
+                                    </a>
+                                    <div class="date">2017-06-10 ~ 2017-06-10</div>
+                                    <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <ul class="pagination"></ul>
                 </div>
             </div>
         </div>
     </section>
+
     <footer id="footer">
         <div class="main-footer">
             <div class="container">
@@ -146,7 +125,7 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import Pagination from './pagination.js';
+
 /**
  * All JavaScript
  *
@@ -173,4 +175,22 @@ $(document).ready(function() {
 	};
 
 	$(document).on('click', 'ul.faq li .question', questionClick);
+
+
+	// pagination 製作分頁 UI 元件
+	if ($('ul.pagination').length) {
+		var config = {
+			pagination: {
+				selector: $('ul.pagination'),
+				items: 18,
+				itemsOnPage: 3,
+				currentPage: 1,
+				maxSize: 5,
+				hrefTextPrefix: '#',
+			}
+		};
+
+		var page = new Pagination(config.pagination);
+		page.loadURLHash().init().clickRun();
+	}
 });

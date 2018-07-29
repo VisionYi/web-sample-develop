@@ -6,7 +6,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ad Page</title>
+    <title>FAQ</title>
 
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/grid-system.css">
@@ -37,7 +37,7 @@
                             </ul>
                         </li>
                         <li><a href="../views/price-page.html">Price</a></li>
-                        <li><a href="../views/faq-page.html">FAQ</a></li>
+                        <li><a class="active" href="../views/faq-page.html">FAQ</a></li>
                         <li><a href="../views/about.html">About</a></li>
                         <li><a href="../views/contact.html">Contact</a></li>
                     </ul>
@@ -48,46 +48,56 @@
     <section id="main">
         <div class="page-title">
             <div class="container">
-                <h1>企業廣告</h1>
+                <h1>FAQ 常見問題</h1>
             </div>
         </div>
 
-        <div class="ad-page">
+        <div class="faq-page">
             <div class="container">
                 <div class="grid-12 tablet-1">
                     <div class="column-9">
                         <div class="page-post has-sidebar">
-                            <div class="image-frame">
-                                <img src="../assets/images/ad-slider-1.jpg" alt="ad picture">
-                            </div>
-
-                            <div class="post-header">
-                                <div class="calendar">
-                                    <div class="date">10</div>
-                                    <div class="month">六月</div>
-                                </div>
-                                <h2 class="title-left large">標題測試</h2>
-                            </div>
-                            <div class="post-content has-calendar">
-                                <div class="text-around-picture">
-                                    <img src="../assets/images/post_content_img_2.jpg" alt="文繞圖">
-                                    <p>內容測試--內容測試--內容測試--內容測試--內容測試--內容測試--</p>
-                                </div>
-                                <div class="image-group items">
-                                    <ul class="grid-12 more-relaxed mobile-1">
-                                        <li class="column-6">
-                                            <img src="../assets/images/post_content_img_1.jpg" alt="">
-                                            <h3>標題測試-1</h3>
-                                            <p>內容測試--內容測試--內容測試--</p>
-                                        </li>
-                                        <li class="column-6">
-                                            <img src="../assets/images/post_content_img_2.jpg" alt="">
-                                            <h3>標題測試-2</h3>
-                                            <p>內容測試--內容測試--內容測試--</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <h2 class="title-left large">常見問題</h2>
+                            <ul class="faq">
+                                <li class="active">
+                                    <div class="question">問題測試-1</div>
+                                    <div class="answer post-content">
+                                        <p>內容測試--內容測試--內容測試--</p>
+                                        <div class="image-group items">
+                                            <ul class="grid-12 more-relaxed mobile-1">
+                                                <li class="column-6">
+                                                    <img src="../assets/images/post_content_img_1.jpg" alt="">
+                                                    <h3>標題測試-1</h3>
+                                                    <p>內容測試--內容測試--內容測試--</p>
+                                                </li>
+                                                <li class="column-6">
+                                                    <img src="../assets/images/post_content_img_2.jpg" alt="">
+                                                    <h3>標題測試-2</h3>
+                                                    <p>內容測試--內容測試--內容測試--</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="question">問題測試-2</div>
+                                    <div class="answer post-content">
+                                        <p>內容測試--內容測試--內容測試--</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="question">問題測試-3</div>
+                                    <div class="answer post-content">
+                                        <p>內容測試--內容測試--內容測試--</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="question">問題測試-4</div>
+                                    <div class="answer post-content">
+                                        <p>內容測試--內容測試--內容測試--</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="column-3 computer-only">
@@ -194,7 +204,7 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/main.js"></script>
 </body>
 </html>

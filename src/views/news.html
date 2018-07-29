@@ -184,25 +184,7 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/main.js"></script>
-    <script type="text/javascript" src="../assets/js/pagination.js"></script>
-    <script>
-        $(document).ready(function () {
-            var config = {
-                pagination: {
-                    selector: $('ul.pagination'),
-                    items: 18,
-                    itemsOnPage: 3,
-                    currentPage: 1,
-                    maxSize: 5,
-                    hrefTextPrefix: '#',
-                }
-            };
-
-            var pag = new Pagination(config.pagination);
-            pag.loadURLHash().init().clickRun();
-        });
-    </script>
 </body>
 </html>
